@@ -9,7 +9,7 @@
             <nav class="navbar header-navbar pcoded-header">
                 <div class="navbar-wrapper">
                     <div class="navbar-logo">
-                        <a href="?c=dashboard&m=dashboard">
+                        <a href="?c=Dashboard&m=dashboard">
                             <img class="img-fluid" src="assets/images/logo-svg.svg" alt="Logo-FastBeauty" width="135px" height="135px"/>
                         </a>
                         <a class="mobile-menu" id="mobile-collapse" href="#!">
