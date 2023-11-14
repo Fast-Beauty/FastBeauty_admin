@@ -3,7 +3,7 @@
 
     <div class="page-header card">
         <div class="back-user">
-            <a href="?c=users&m=index">
+            <a href="?c=Users&m=index">
                 <span class="feather icon-arrow-left"></span> Volver
             </a>
         </div>

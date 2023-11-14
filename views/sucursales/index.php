@@ -7,14 +7,14 @@
                 <div class="page-header-breadcrumb">
                     <ul class=" breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="?c=dashboard&m=dashboard"><i class="feather icon-home"></i></a>
+                            <a href="?c=Dashboard&m=dashboard"><i class="feather icon-home"></i></a>
                         </li>
                         <li class="breadcrumb-item"><a href="#!">Sucursales</a> </li>
                     </ul>
                 </div>
         </div>
         <div class="d-flex justify-content-end align-items-center border-bottom pb-3">
-            <a href="?c=sucursales&m=create" class="py-3 px-5 rounded text-white add">Nuevo</a>
+            <a href="?c=Sucursales&m=create" class="py-3 px-5 rounded text-white add">Nuevo</a>
         </div>
         <div class="row align-items-start">
             <div class="col-lg-12">
@@ -50,7 +50,7 @@
                                                     <p class="d-inline text-icn">Detalles</p>
                                                 </span>
                                             </a>
-                                            <a href="?c=sucursales&m=edit">
+                                            <a href="?c=Sucursales&m=edit">
                                                 <span class="feather icon-edit-2">
                                                     <p class="d-inline">Editar</p>    
                                                 </span>
