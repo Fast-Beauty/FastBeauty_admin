@@ -14,7 +14,7 @@
                             </a>
                             <ul class="pcoded-submenu">
                                 <li class="">
-                                    <a href="?c=users&m=index" class="waves-effect waves-dark">
+                                    <a href="?c=Users&m=index" class="waves-effect waves-dark">
                                         <span class="">Listar</span>
                                     </a>
                                 </li>
@@ -29,7 +29,7 @@
                             </a>
                             <ul class="pcoded-submenu">
                                 <li class="">
-                                    <a href="?c=products&m=index" class="waves-effect waves-dark">
+                                    <a href="?c=Products&m=index" class="waves-effect waves-dark">
                                         <span class="">Listar</span>
                                     </a>
                                 </li>
@@ -57,7 +57,7 @@
                             </a>
                             <ul class="pcoded-submenu">
                                 <li class="">
-                                    <a href="?c=services&m=index" class="waves-effect waves-dark">
+                                    <a href="?c=Services&m=index" class="waves-effect waves-dark">
                                         <span class="">Listar</span>
                                     </a>
                                 </li>
