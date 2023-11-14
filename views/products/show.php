@@ -15,9 +15,9 @@
                 <div class="page-header-breadcrumb">
                     <ul class=" breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="?c=dashboard&m=dashboard"><i class="feather icon-home"></i></a>
+                            <a href="?c=Dashboard&m=dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="?c=products&m=index">Productos</a> </li>
+                        <li class="breadcrumb-item"><a href="?c=Products&m=index">Productos</a> </li>
                     </ul>
                 </div>
             </div>
@@ -27,7 +27,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="?c=products&m=index" class="btn btn-primary">Cancelar o volver</a>
+                        <a href="?c=Products&m=index" class="btn btn-primary">Cancelar o volver</a>
                         <div class="row">
                             <div class="col-md-3 mt-4 ">
                                 <img width="200px"   class="" src="https://elenacuidadocapilar.com/cdn/shop/files/1_6.webp?v=1691085055&width=713" alt="">

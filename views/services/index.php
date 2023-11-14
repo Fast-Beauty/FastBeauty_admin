@@ -7,14 +7,14 @@
                 <div class="page-header-breadcrumb">
                     <ul class=" breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="?c=dashboard&m=dashboard"><i class="feather icon-home"></i></a>
+                            <a href="?c=Dashboard&m=dashboard"><i class="feather icon-home"></i></a>
                         </li>
                         <li class="breadcrumb-item"><a href="#!">Servicios</a> </li>
                     </ul>
                 </div>
         </div>
         <div class="d-flex justify-content-end align-items-center border-bottom pb-3">
-            <a href="?c=services&m=create" class="py-3 px-5 rounded text-white add">Nuevo</a>
+            <a href="?c=Services&m=create" class="py-3 px-5 rounded text-white add">Nuevo</a>
         </div>
         <div class="row align-items-end">
             <div class="col-12">  
@@ -44,9 +44,9 @@
                                                 <td>20.000</td>
                                                 <td>P</td>
                                                 <td>
-                                                    <a href="?c=services&m=show"class="btn btn-sn btn-info">Detalles</a>
-                                                    <a href="?c=services&m=edit"class="btn btn-sn btn-warning">Editar</a>
-                                                    <a href="?c=services&m=delete"class="btn btn-sn btn-danger">Eliminar</a>
+                                                    <a href="?c=Services&m=show"class="btn btn-sn btn-info">Detalles</a>
+                                                    <a href="?c=Services&m=edit"class="btn btn-sn btn-warning">Editar</a>
+                                                    <a href="?c=Services&m=delete"class="btn btn-sn btn-danger">Eliminar</a>
                                                 </td>
                                             </tr>
                                             <?php } ?>

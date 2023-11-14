@@ -5,7 +5,7 @@
         <div class="row align-items-end">
             <div class="col-12">
                 <div class="card-body">
-                    <a href="?c=services&m=index"class="btn btn-link">cancelar/Volver</a>
+                    <a href="?c=Services&m=index"class="btn btn-link">cancelar/Volver</a>
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
                         <div class="row">
