@@ -9,7 +9,7 @@
         </div> -->
         <div class="d-flex justify-content-between align-items-center">
                 <div class="back-user">
-                    <a href="?c=users&m=index">
+                    <a href="?c=Users&m=index">
                         <span class="feather icon-arrow-left"></span> Volver
                     </a>
                 </div>
