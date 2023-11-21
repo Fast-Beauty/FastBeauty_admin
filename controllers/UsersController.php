@@ -24,4 +24,8 @@ class UsersController {
         require_once('views/users/create.php');
         require_once('views/components/layout/footer.php');
     }
+
+    public function delete() {
+        require_once('views/users/code/code_delete.php');
+    }
 }
