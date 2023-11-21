@@ -1,4 +1,23 @@
 <!-- Contenido -->
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "fastbeauty_db";
+
+// conxeion db
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// verficar conexion
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+$sql = $conn->query("select * from users");
+$datos = $sql->fetch_object();
+
+?>
+
 <div class="pcoded-content">
 
     <div class="page-header card my-0">
@@ -49,7 +68,7 @@
                                                     <p class="d-inline text-icn">Detalles</p>
                                                 </span>
                                             </a>
-                                            <a href="?c=Users&m=edit">
+                                            <a href="?c=Users&m=edit&id=1">
                                                 <span class="feather icon-edit-2">
                                                     <p class="d-inline">Editar</p>    
                                                 </span>
@@ -57,61 +76,6 @@
                                             <a href="#">
                                                 <span class="feather icon-trash">
                                                     <p class="d-inline">Eliminar</p>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white">
-                                    <td>Imagen</td>
-                                    <td>2</td>
-                                    <td>Andres Betancourth</td>
-                                    <td>correo@correo.com</td>
-                                    <td>555 555</td>
-                                    <td>10/08/1997</td>
-                                    <td><div class="bg-danger text-center p-1 rounded">Inactivo</div></td>
-                                    <td>
-                                        <div class="d-flex justify-content-around icon-table">
-                                            <a href="#">
-                                                <span class="feather icon-eye">
-                                                    <p class="d-inline text-icn">Detalles</p>
-                                                </span>
-                                            </a>
-                                            <a href="?c=Users&m=edit">
-                                                <span class="feather icon-edit-2">
-                                                    <p class="d-inline text-icn">Editar</p>
-                                                </span>
-                                            </a>
-                                            <a href="#">
-                                                <span class="feather icon-trash">
-                                                    <p class="d-inline text-icn">Eliminar</p></span>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="bg-white">
-                                    <td>Imagen</td>
-                                    <td>3</td>
-                                    <td>Fabián Cifuentes</td>
-                                    <td>correo@correo.com</td>
-                                    <td>555 555</td>
-                                    <td>10/08/2004</td>
-                                    <td><div class="bg-success text-center p-1 rounded">Activo</div></td>
-                                    <td>
-                                        <div class="d-flex justify-content-around icon-table">
-                                            <a href="#">
-                                                <span class="feather icon-eye">
-                                                    <p class="d-inline text-icn">Detalles</p>
-                                                </span>
-                                            </a>
-                                            <a href="?c=Users&m=edit">
-                                                <span class="feather icon-edit-2">
-                                                    <p class="d-inline text-icn">Editar</p>
-                                                </span>
-                                            </a>
-                                            <a href="#">
-                                                <span class="feather icon-trash">
-                                                    <p class="d-inline text-icn">Detalles</p>
                                                 </span>
                                             </a>
                                         </div>
