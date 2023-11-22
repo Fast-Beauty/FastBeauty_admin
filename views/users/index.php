@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 $sql = $conn->query("select * from users");
-$datos = $sql->fetch_object();
+
 
 ?>
 
@@ -47,19 +47,23 @@ $datos = $sql->fetch_object();
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Teléfono</th>
-                                    <th scope="col">Fecha de nacimiento</th>
+                                    <th scope="col">Tipo de documento</th>
                                     <th scope="col" class="text-center">Estado</th>
                                     <th scope="col" class="text-center">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                
+                                <?php
+                                while($datos = $sql->fetch_object()) {
+                                ?>
                                 <tr class="bg-white">
                                     <td>Imagen</td>
-                                    <td>1</td>
-                                    <td>Alejandro Betancourth</td>
-                                    <td>correo@correo.com</td>
-                                    <td>333 333</td>
-                                    <td>18/01/2002</td>
+                                    <td><?=$datos->id?></td>
+                                    <td><?=$datos->name?></td>
+                                    <td><?=$datos->email?></td>
+                                    <td><?=$datos->phone?></td>
+                                    <td><?=$datos->type_document?></td>
                                     <td><div class="bg-success text-center p-1 rounded">Activo</div></td>
                                     <td>
                                         <div class="d-flex justify-content-around icon-table">
@@ -68,12 +72,12 @@ $datos = $sql->fetch_object();
                                                     <p class="d-inline text-icn">Detalles</p>
                                                 </span>
                                             </a>
-                                            <a href="?c=Users&m=edit&id=1">
+                                            <a href="?c=Users&m=edit&id=<?=$datos->id?>">
                                                 <span class="feather icon-edit-2">
                                                     <p class="d-inline">Editar</p>    
                                                 </span>
                                             </a>
-                                            <a href="?c=Users&m=delete&id=1">
+                                            <a href="?c=Users&m=delete&id=<?=$datos->id?>">
                                                 <span class="feather icon-trash">
                                                     <p class="d-inline">Eliminar</p>
                                                 </span>
@@ -81,6 +85,7 @@ $datos = $sql->fetch_object();
                                         </div>
                                     </td>
                                 </tr>
+                                <?php }?>
                             </tbody>
                         </table>
                     </div>
