@@ -73,7 +73,7 @@ $datos = $sql->fetch_object();
                                                     <p class="d-inline">Editar</p>    
                                                 </span>
                                             </a>
-                                            <a href="#">
+                                            <a href="?c=Users&m=delete&id=1">
                                                 <span class="feather icon-trash">
                                                     <p class="d-inline">Eliminar</p>
                                                 </span>
