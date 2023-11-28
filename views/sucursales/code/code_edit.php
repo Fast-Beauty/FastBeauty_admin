@@ -2,19 +2,14 @@
 if(!empty($_POST["btnEditar"])) {
     $name = $_POST["name"];
     $id = $_POST["id"];
-    $email = $_POST["email"];
+    $nit = $_POST["nit"];
     $phone = $_POST["phone"];
-    $document = $_POST["document"];
+    $addres = $_POST["addres"];
 
-    $sql = $conn->query("update users set name='$name', email='$email', phone=$phone, document=$document where id=$id");
+    $sql = $conn->query("update branch_office set name='$name', nit='$nit', phone=$phone, addres=$addres where id=$id");
     if($sql==1) {
         // echo '<script>window.location.href = "index.php";</script>';
     } else {
         echo "Error al modificar usuario";
     }
 }
-
-$url = $_SERVER['HTTP_REFERER'];
-header("LOCATION:$url");
-
-?>

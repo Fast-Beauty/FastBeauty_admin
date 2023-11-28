@@ -1,5 +1,4 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -16,12 +15,12 @@ if ($conn->connect_error) {
 
 
 
-    $sql = "DELETE FROM users WHERE id=$id";
+    $sql = "DELETE FROM branch_office WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         echo "Eliminado correctamente.";
     } else {
-        echo "Error al Eliminar el usuario: " . $conn->error;
+        echo "Error al Eliminar el Sucursal: " . $conn->error;
     }
 
 $conn->close();
@@ -30,4 +29,3 @@ $conn->close();
  header("LOCATION:$url");
 
 ?>
-

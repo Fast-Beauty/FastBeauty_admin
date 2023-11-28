@@ -1,4 +1,23 @@
 <!-- Contenido -->
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "fastbeauty_db";
+
+// conxeion db
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// verficar conexion
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+$sql = $conn->query("select * from branch_office");
+
+
+?>
+
 <div class="pcoded-content">
 
     <div class="page-header card my-0">
@@ -34,14 +53,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php for($i=1;$i<4;$i++){  ?> 
+
+                                <?php 
+                                 while($date = $sql->fetch_object()) {
+                                ?> 
                                 <tr class="bg-white">
                                     <td>Imagen</td>
-                                    <td><?php echo $i ?></td>
-                                    <td>Empresa <?php echo $i ?></td>
-                                    <td>1234 567 896</td>
-                                    <td>cra 1 #2 - 3 sur</td>
-                                    <td>333 333 333</td>
+                                    <td><?=$date->id?></td>
+                                    <td><?=$date->name?></td>
+                                    <td><?=$date->nit?></td>
+                                    <td><?=$date->addres?></td>
+                                    <td><?=$date->phone?></td>
                                     <td><div class="bg-success text-center p-1 rounded">Activo</div></td>
                                     <td>
                                         <div class="d-flex justify-content-around icon-table">
@@ -50,13 +72,13 @@
                                                     <p class="d-inline text-icn">Detalles</p>
                                                 </span>
                                             </a>
-                                            <a href="?c=Sucursales&m=edit">
+                                            <a href="?c=Sucursales&m=edit=<?=date->id?>">
                                                 <span class="feather icon-edit-2">
                                                     <p class="d-inline">Editar</p>    
                                                 </span>
                                             </a>
-                                            <a href="#">
-                                                <span class="feather icon-trash">
+                                            <a href="?c=Sucursales&m=delete=<?=date->id?>">
+                                                <span class="feather icon-trash=">
                                                     <p class="d-inline">Eliminar</p>
                                                 </span>
                                             </a>

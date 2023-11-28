@@ -4,22 +4,23 @@
         $password = "";
         $dbname = "fastbeauty_db";
 
-        // conxeion db
+        // conxeion ddb
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        // verficar conexion
+        // verficaf conexion
         if ($conn->connect_error) {
             die("Conexión fallida: " . $conn->connect_error);
         }
 ?>
+
 <?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
-    $email = $_POST["email"];
+    $nit = $_POST["nit"];
     $phone = $_POST["phone"];
-    $fecha__nac = $_POST["date_birth"];
+    $addres = $_POST["addres"];
 
-    $sql = "INSERT INTO users (name, email, phone) VALUES ('$name', '$email' ,'$phone')";
+    $sql = "INSERT INTO branch_office (name, email, phone) VALUES ('$name', '$nit' ,'$phone',$addres)";
 
   
 
@@ -32,8 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 
-$url = $_SERVER['HTTP_REFERER'];
-header("LOCATION:$url");
+//$url = $_SERVER['HTTP_REFERER'];
+//header("LOCATION:$url");
 
 
 
