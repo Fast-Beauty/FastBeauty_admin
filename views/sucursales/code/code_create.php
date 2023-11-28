@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST["phone"];
     $addres = $_POST["addres"];
 
-    $sql = "INSERT INTO branch_office (name, email, phone) VALUES ('$name', '$nit' ,'$phone',$addres)";
+    $sql = "INSERT INTO branch_office (name, nit, phone, addres) VALUES ('$name', '$nit' ,'$phone', '$addres')";
 
   
 
