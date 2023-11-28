@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $_POST["descripcion"];
     $image = $_POST["image"];
 
-    $sql = "INSERT INTO products (name, description, price) VALUES ('$name', '$descripcion' ,'$precio')";
+    $sql = "INSERT INTO productos (name, description, price) VALUES ('$name', '$descripcion' ,'$precio')";
 
     if ($conn->query($sql) == TRUE) {
         echo "Nuevo producto agregado correctamente.";
