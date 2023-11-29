@@ -25,9 +25,6 @@ class ServicesController{
     }
     
     public function edit(){
-        if(isset($_GET['id'])) {
-            $datos = $this->modelosvc->obtenerId($_GET['id']);
-        }
         require_once('views/components/layout/head.php');
         require_once('views/services/edit.php');
         require_once('views/components/layout/footer.php');
@@ -42,27 +39,28 @@ class ServicesController{
 
     }
 
-    public function createCode() {
+    public function createupdate() {
         $name = $_POST['name'];
         $description = $_POST['description'];
         $price = $_POST['price'];
         $time = $_POST['time'];
         $data = "'".$name."', '".$description."', ".$price.", ".$time;
-        if(isset($_GET['id'])) {
-            $id = $_GET['id'];
-            $this->modelosvc->update($datos, $id);
+
+        if(!empty($_POST["btnEditar"])) {
+
+            $id = $_POST['id'];
+            $datos = array(
+                'name' => $name,
+                'description' => $description,
+                'price' => $price,
+                'time' => $time,
+                'id' => $id
+            );
+
+            $this->modelosvc->update($datos);
         } else {
             $this->modelosvc->insert($data);
         }
-
-        header("location:?c=Services&m=index");
-    }
-
-    public function update() {
-        $name = $_POST['name'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
-        $datos = "'".$name."', '".$description."', ".$price;
 
         header("location:?c=Services&m=index");
     }

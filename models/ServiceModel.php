@@ -28,7 +28,7 @@ class ServiceModel {
         return $datos;
     }
 
-    public function update($datos, $id) {
-        $sql = $this->svc->query("update services set name='$name', description='$description', price=$price, time=$time where id=$id");
+    public function update($datos) {
+        $sql = $this->svc->query("UPDATE services SET name='{$datos['name']}', description='{$datos['description']}', price={$datos['price']}, time={$datos['time']} WHERE id={$datos['id']}");
     }
 }
