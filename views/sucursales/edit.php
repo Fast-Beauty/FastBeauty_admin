@@ -28,8 +28,8 @@ echo $id;
             </a>
         </div>
         <div class="row justify-content-center">
-            <div class="back-">
-                <div class="?c=Sucursales&m=index">
+            <div class="">
+                <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
                         <form action="views/sucursales/code/code_edit.php" class="bg-white px-5 py-4 formulario-user" method="post">
