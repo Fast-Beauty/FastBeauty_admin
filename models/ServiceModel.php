@@ -31,4 +31,8 @@ class ServiceModel {
     public function update($datos) {
         $sql = $this->svc->query("UPDATE services SET name='{$datos['name']}', description='{$datos['description']}', price={$datos['price']}, time={$datos['time']} WHERE id={$datos['id']}");
     }
+
+    public function delete($id) {
+        $sql = $this->svc->query("DELETE FROM services WHERE id=$id");
+    }
 }

@@ -64,6 +64,12 @@ class ServicesController{
 
         header("location:?c=Services&m=index");
     }
+    
+    public function delete() {
+        $this->modelosvc->delete($_GET['id']);
+        
+        header("location:?c=Services&m=index");
+    }
 
 }
 
