@@ -12,27 +12,35 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                        <form action="" class="bg-white px-5 py-4 formulario-user">
+                        <form action="" class="bg-white px-5 py-4 formulario-user" method="post">
                         <h3 class="mb-4 text-center">Editar Servicio</h3>
+                        <input type="hidden" value="<?=$_GET["id"]?>" name="id">
+                        <?php foreach($this->modelosvc->obtenerId($_GET['id']) as $datos): ?>
                         <div class="d-flex flex-column mt-2 campo">
                             <label for="nombre">Nombre:</label>
-                            <input id="nombre" type="text" placeholder="Nombre Completo" autocomplete="off" value="Corte" class="input-form-user py-3 px-2">
+                            <input id="nombre" type="text" placeholder="Nombre Completo" autocomplete="off" value="<?= $datos['name'] ?>" class="input-form-user py-3 px-2" name="name">
                         </div>
                         
                         <div class="d-flex flex-column mt-2 campo">
                             <label for="descripcion">Descripción:</label>
-                            <input id="descripcion" type="text" placeholder="Descripción" autocomplete="off" value="Lorem, ipsum dolor sit amet consectetur adipisicing elit." class="input-form-user py-3 px-2">
+                            <input id="descripcion" type="text" placeholder="Descripción" autocomplete="off" value="<?= $datos['description'] ?>" class="input-form-user py-3 px-2">
                         </div>
 
                         <div class="d-flex flex-column mt-2 campo">
                             <label for="precio">Precio:</label>
-                            <input id="precio" type="text" placeholder="Precio Producto" autocomplete="off" value="$20.000" class="input-form-user py-3 px-2">
+                            <input id="precio" type="text" placeholder="Precio Servicio" autocomplete="off" value="<?= $datos['price'] ?>" class="input-form-user py-3 px-2">
+                        </div>
+
+                        <div class="d-flex flex-column mt-2 campo">
+                            <label for="time">Tiempo:</label>
+                            <input id="time" type="text" placeholder="Tiempo servicio" autocomplete="off" value="<?= $datos['time'] ?>" class="input-form-user py-3 px-2">
                         </div>
 
                         <div class="d-flex flex-column mt-2 campo">
                             <label for="imagen">Imagen:</label>
                             <input id="imagen" type="file" class="input-form-user py-3 px-2">
                         </div>
+                        <?php endforeach; ?>
 
                         <input type="submit" value="Guardar" class="submit-user w-100 mt-4 py-3 text-white">
                     </form>
