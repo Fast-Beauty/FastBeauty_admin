@@ -25,7 +25,7 @@ if ($conn->connect_error) {
 
 $conn->close();
 
- $url = $_SERVER['HTTP_REFERER'];
- header("LOCATION:$url");
+$url = $_SERVER['HTTP_REFERER'];
+header("LOCATION:$url");
 
 ?>

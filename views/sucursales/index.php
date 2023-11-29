@@ -55,7 +55,7 @@ $sql = $conn->query("select * from branch_office");
                             <tbody>
 
                                 <?php 
-                                 while($date = $sql->fetch_object()) {
+                                while($date = $sql->fetch_object()) {
                                 ?> 
                                 <tr class="bg-white">
                                     <td>Imagen</td>
@@ -72,12 +72,12 @@ $sql = $conn->query("select * from branch_office");
                                                     <p class="d-inline text-icn">Detalles</p>
                                                 </span>
                                             </a>
-                                            <a href="?c=Sucursales&m=edit=<?=date->id?>">
+                                            <a href="?c=Sucursales&m=edit&id=<?=$date->id?>">
                                                 <span class="feather icon-edit-2">
                                                     <p class="d-inline">Editar</p>    
                                                 </span>
                                             </a>
-                                            <a href="?c=Sucursales&m=delete=<?=date->id?>">
+                                            <a href="?c=Sucursales&m=delete&id=<?=$date->id?>">
                                                 <span class="feather icon-trash=">
                                                     <p class="d-inline">Eliminar</p>
                                                 </span>

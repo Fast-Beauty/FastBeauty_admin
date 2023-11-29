@@ -1,4 +1,17 @@
 <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "fastbeauty_db";
+
+        // conxeion ddb
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // verficaf conexion
+        if ($conn->connect_error) {
+            die("Conexión fallida: " . $conn->connect_error);
+        }
+
 if(!empty($_POST["btnEditar"])) {
     $name = $_POST["name"];
     $id = $_POST["id"];
@@ -6,10 +19,20 @@ if(!empty($_POST["btnEditar"])) {
     $phone = $_POST["phone"];
     $addres = $_POST["addres"];
 
-    $sql = $conn->query("update branch_office set name='$name', nit='$nit', phone=$phone, addres=$addres where id=$id");
-    if($sql==1) {
-        // echo '<script>window.location.href = "index.php";</script>';
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    $sql = $conn->prepare("UPDATE branch_office SET name=?, nit=?, phone=?, addres=? WHERE id=?");
+    $sql->bind_param("ssssi", $name, $nit, $phone, $addres, $id);
+
+    if ($sql->execute()) {
+        echo 'Sucursal modificada correctamente';
     } else {
-        echo "Error al modificar usuario";
+        echo "Error al modificar Sucursal";
     }
 }
+
+$url = $_SERVER['HTTP_REFERER'];
+header("LOCATION:$url");
+
+?>
