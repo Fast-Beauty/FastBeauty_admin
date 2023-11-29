@@ -14,5 +14,7 @@ if(!empty($_POST["btnEditar"])) {
     }
 }
 
+$url = $_SERVER['HTTP_REFERER'];
+header("LOCATION:$url");
 
 ?>
