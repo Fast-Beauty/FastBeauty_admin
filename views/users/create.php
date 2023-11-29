@@ -34,6 +34,10 @@
                                 <label for="date_birth">Fecha de nacimiento:</label>
                                 <input id="date_birth" name="date_birth" type="text" placeholder="Tu Fecha de nacimiento" autocomplete="off" class="input-form-user py-3 px-2">
                             </div>
+                            <div class="d-flex flex-column mt-2 campo">
+                                <label for="password">Contraseña:</label>
+                                <input id="password" name="password" type="password" placeholder="Contraseña" autocomplete="off" class="input-form-user py-3 px-2" name="password">
+                            </div>
 
                             <input type="submit" value="Añadir Usuario" class="submit-user w-100 mt-4 py-3 text-white">
                         </form>
