@@ -25,4 +25,7 @@ class ProductsController {
         require_once('views/products/edit.php');
         require_once('views/components/layout/footer.php');
     }
+    public function delete() {
+        require_once('views/products/code/code_delete.php');
+    }
 }
