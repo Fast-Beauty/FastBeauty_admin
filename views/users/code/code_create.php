@@ -17,9 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
+    $password = md5($_POST["password"]);
     $fecha__nac = $_POST["date_birth"];
 
-    $sql = "INSERT INTO users (name, email, phone) VALUES ('$name', '$email' ,'$phone')";
+    $sql = "INSERT INTO users (name, email, phone, password) VALUES ('$name', '$email' ,'$phone', '$password')";
 
   
 
