@@ -28,28 +28,25 @@
                                             <tr>
                                                 <th>NOMBRE</th>
                                                 <th>DESCRIPCIÓN</th>
-                                                <th></th>
                                                 <th>PRECIO</th>
                                                 <th>IMAGEN</th>
                                                 <th width="260">ACCIONES</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php for($i = 1; $i <10;$i++){ ?>
+                                            <?php foreach($this->modelosvc->listar() as $datos): ?>
                                             <tr>
-                                                <td>Corte</td>
-                                                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                                </td>
-                                                <td></td>
-                                                <td>20.000</td>
+                                                <td><?=$datos['name']?></td>
+                                                <td><?=$datos['description']?></td>
+                                                <td><?=$datos['price']?></td>
                                                 <td>P</td>
                                                 <td>
                                                     <a href="?c=Services&m=show"class="btn btn-sn btn-info">Detalles</a>
-                                                    <a href="?c=Services&m=edit"class="btn btn-sn btn-warning">Editar</a>
-                                                    <a href="?c=Services&m=delete"class="btn btn-sn btn-danger">Eliminar</a>
+                                                    <a href="?c=Services&m=edit&id=<?=$datos['id']?>"class="btn btn-sn btn-warning">Editar</a>
+                                                    <a href="?c=Services&m=delete&id=<?=$datos['id']?>"class="btn btn-sn btn-danger">Eliminar</a>
                                                 </td>
                                             </tr>
-                                            <?php } ?>
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>

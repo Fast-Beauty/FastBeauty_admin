@@ -1,4 +1,6 @@
 <?php 
+require_once 'models/db.php';
+
 $controller = isset($_GET['c']) ?  $_GET['c'] : 'Login';
 $controller= $controller.'Controller';
 
