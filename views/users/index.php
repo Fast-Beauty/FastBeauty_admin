@@ -47,7 +47,7 @@ $sql = $conn->query("select * from users");
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Teléfono</th>
-                                    <th scope="col">Tipo de documento</th>
+                                    <th scope="col">Documento</th>
                                     <th scope="col" class="text-center">Estado</th>
                                     <th scope="col" class="text-center">Acciones</th>
                                 </tr>
@@ -63,7 +63,7 @@ $sql = $conn->query("select * from users");
                                     <td><?=$datos->name?></td>
                                     <td><?=$datos->email?></td>
                                     <td><?=$datos->phone?></td>
-                                    <td><?=$datos->type_document?></td>
+                                    <td><?=$datos->document?></td>
                                     <td><div class="bg-success text-center p-1 rounded">Activo</div></td>
                                     <td>
                                         <div class="d-flex justify-content-around icon-table">

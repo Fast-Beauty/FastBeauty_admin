@@ -26,13 +26,13 @@
                             </div>
 
                             <div class="d-flex flex-column mt-2 campo">
-                                <label for="tel">Teléfono:</label>
+                                <label for="phone">Teléfono:</label>
                                 <input id="phone" name="phone" type="tel" placeholder="Tu Teléfono" autocomplete="off" class="input-form-user py-3 px-2">
                             </div>
 
                             <div class="d-flex flex-column mt-2 campo">
-                                <label for="date_birth">Fecha de nacimiento:</label>
-                                <input id="date_birth" name="date_birth" type="text" placeholder="Tu Fecha de nacimiento" autocomplete="off" class="input-form-user py-3 px-2">
+                                <label for="document">Documento:</label>
+                                <input id="document" name="document" type="text" placeholder="Tu Documento" autocomplete="off" class="input-form-user py-3 px-2">
                             </div>
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="password">Contraseña:</label>
