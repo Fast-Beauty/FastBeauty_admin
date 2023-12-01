@@ -18,9 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $password = md5($_POST["password"]);
-    $fecha__nac = $_POST["date_birth"];
+    $document = $_POST["document"];
 
-    $sql = "INSERT INTO users (name, email, phone, password) VALUES ('$name', '$email' ,'$phone', '$password')";
+    $sql = "INSERT INTO users (name, email, phone, document, password) VALUES ('$name', '$email' ,'$phone', '$document', '$password')";
 
   
 
