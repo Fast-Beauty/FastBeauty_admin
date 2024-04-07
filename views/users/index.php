@@ -1,22 +1,3 @@
-<!-- Contenido -->
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "fastbeauty_db";
-
-// conxeion db
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// verficar conexion
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
-$sql = $conn->query("select * from users");
-
-
-?>
 
 <div class="pcoded-content">
 
@@ -52,18 +33,18 @@ $sql = $conn->query("select * from users");
                                     <th scope="col" class="text-center">Acciones</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                
+                            <tbody id="tbody">
+                                <!--Tabla usuarios
                                 <?php
-                                while($datos = $sql->fetch_object()) {
+                                //while($datos = $sql->fetch_object()) {
                                 ?>
                                 <tr class="bg-white">
                                     <td>Imagen</td>
-                                    <td><?=$datos->id?></td>
-                                    <td><?=$datos->name?></td>
-                                    <td><?=$datos->email?></td>
-                                    <td><?=$datos->phone?></td>
-                                    <td><?=$datos->type_document?></td>
+                                    <td><?//=$datos->id?></td>
+                                    <td><?//=$datos->name?></td>
+                                    <td><?//=$datos->email?></td>
+                                    <td><?//=$datos->phone?></td>
+                                    <td><?//=$datos->type_document?></td>
                                     <td><div class="bg-success text-center p-1 rounded">Activo</div></td>
                                     <td>
                                         <div class="d-flex justify-content-around icon-table">
@@ -85,7 +66,7 @@ $sql = $conn->query("select * from users");
                                         </div>
                                     </td>
                                 </tr>
-                                <?php }?>
+                                <?php // }?>-->
                             </tbody>
                         </table>
                     </div>
@@ -109,3 +90,5 @@ $sql = $conn->query("select * from users");
 </div>
 </div>
 </div>
+<script src="./assets/js/firebaseFetch.js"></script>
+<script src="./assets/js/main.js"></script>
