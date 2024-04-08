@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
@@ -62,7 +62,7 @@
 
                     <input type="submit" value="Iniciar Sesión" class="">
                 </form>
-                <div class="social-network">
+                <!-- <div class="social-network">
                     <p class="text-center">- O continúe con -</p>
                     <div class="options d-flex justify-content-between gap-4">
                         <a href="#" class="google">
@@ -72,7 +72,7 @@
                             <img src="assets/images/facebook.svg" alt="Logo Facebook">
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="register">
@@ -94,6 +94,18 @@
                     <h1 class="text-center mb-4">Crear Cuenta</h1>
 
                     <div class="campo">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" placeholder="Ingrese su nombre">
+                    </div>
+                    <div class="campo">
+                        <label for="phone">Telefono</label>
+                        <input type="number" id="phone" placeholder="Ingrese su numero de telefono">
+                    </div>
+                    <div class="campo">
+                        <label for="text">Documento</label>
+                        <input type="number" id="document" placeholder="Ingrese su documentoo">
+                    </div>
+                    <div class="campo">
                         <label for="correo-r">Email</label>
                         <input type="text" id="correo-r" placeholder="Ingrese su correo">
                     </div>
@@ -108,7 +120,7 @@
 
                     <input type="submit" value="Crear cuenta" class="">
                 </form>
-                <div class="social-network">
+                <!-- <div class="social-network">
                     <p class="text-center">- O regístrese con -</p>
                     <div class="options d-flex justify-content-between gap-4">
                         <a href="#" class="google">
@@ -118,7 +130,7 @@
                             <img src="assets/images/facebook.svg" alt="Logo Facebook">
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="circles">
@@ -128,7 +140,9 @@
             <div class="circle4 circle"></div>
         </div>
     </main>
-
+    <script src="assets/js/signIn.js" type="module"></script>
+    <script src="assets/js/signUp.js" type="module"></script>
     <script src="assets/js/app.js"></script>
+    
 </body>
 </html>

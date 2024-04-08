@@ -7,8 +7,8 @@ const sliding = document.querySelector('.lateral-login-register');
 const formularioLogin = document.querySelector('.formulario-login');
 const formularioRegister = document.querySelector('.formulario-register');
 
-document.querySelector('#formulario-register').addEventListener('submit', validarRegister);
-document.querySelector('#formulario-login').addEventListener('submit', validarLogin);
+// document.querySelector('#formulario-register').addEventListener('submit', validarRegister);
+// document.querySelector('#formulario-login').addEventListener('submit', validarLogin);
 
 
 const loginDin = document.querySelector('.login-din');
