@@ -68,6 +68,7 @@ async function registrarUsuario(e) {
 
 async function sendDataApi(usuario) {
     let usuarios;
+    let id;
     try {
         const response = await fetch(url);
         const result = await response.json();
@@ -75,7 +76,8 @@ async function sendDataApi(usuario) {
     } catch (error) {
         console.log(error);
     }
-    const id = Object.values(usuarios).length
+
+    usuarios ? id = Object.values(usuarios).length : id = 0;
 
     const {nombre, telefono, documento, email} = usuario;
     const user = {
@@ -94,14 +96,15 @@ async function sendDataApi(usuario) {
                 'Content-Type': 'application/json'
             }
         });
-
+    
         setTimeout(() => {
             location.reload();
-        }, 3000);
-
+        }, 2800);
+    
     } catch (error) {
         console.log(error)
     }
+
 }
 
 
