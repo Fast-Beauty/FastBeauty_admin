@@ -52,7 +52,7 @@
 
                     <div class="campo">
                         <label for="correo">Email</label>
-                        <input type="email" id="correo" placeholder="Ingrese su correo">
+                        <input type="text" id="correo" placeholder="Ingrese su correo">
                     </div>
                     <div class="campo">
                         <label for="password">Contraseña</label>
@@ -95,19 +95,19 @@
 
                     <div class="campo">
                         <label for="name">Nombre</label>
-                        <input type="text" id="name" placeholder="Ingrese su nombre" required>
+                        <input type="text" id="name" placeholder="Ingrese su nombre">
                     </div>
                     <div class="campo">
                         <label for="phone">Telefono</label>
-                        <input type="number" id="phone" placeholder="Ingrese su numero de telefono" required>
+                        <input type="number" id="phone" placeholder="Ingrese su numero de telefono">
                     </div>
                     <div class="campo">
                         <label for="text">Documento</label>
-                        <input type="number" id="document" placeholder="Ingrese su documentoo" required>
+                        <input type="number" id="document" placeholder="Ingrese su documentoo">
                     </div>
                     <div class="campo">
                         <label for="correo-r">Email</label>
-                        <input type="email" id="correo-r" placeholder="Ingrese su correo">
+                        <input type="text" id="correo-r" placeholder="Ingrese su correo">
                     </div>
                     <div class="campo">
                         <label for="password-r">Contraseña</label>

@@ -7,8 +7,9 @@ const url = "https://api-users-6a304-default-rtdb.firebaseio.com/api/users.json"
 const name = formulario.querySelector('#name');
 const phone = formulario.querySelector('#phone');
 const documento = formulario.querySelector('#document');
-const email = formulario.querySelector('input[type="email"]');
-const password = formulario.querySelector('input[type="password"]');
+const email = formulario.querySelector('#correo-r');
+const password = formulario.querySelector('#password-r');
+const confirmPasword = formulario.querySelector('#password-r2');
 
 
 // Eventos
@@ -20,29 +21,70 @@ formulario.addEventListener("submit", registrarUsuario);
 
 async function registrarUsuario(e) {
     e.preventDefault();
+    const user = {
+        nombre: name.value,
+        telefono: +phone.value,
+        documento: +documento.value,
+        email: email.value,
+        password: password.value,
+        confirmPasword: confirmPasword.value
+    }
 
+    if (!Object.values(user).every(users => users != '')) {
+        imprimirAlerta('No puede dejar ningún campo vacío', 'error');
+        return;
+    }
+    if (user.password != user.confirmPasword) {
+        imprimirAlerta('Las constraseñas no coinciden', 'error');
+        return;
+    }
 
     try {
         const userCredentials = await createUserWithEmailAndPassword(auth, email.value, password.value);
         console.log(userCredentials);
+        imprimirAlerta('Registrado con éxito');
+        sendDataApi(user); 
+    } catch (error) {
+        console.log(error);
+        switch (error.code) {
+            case 'auth/invalid-email':
+                imprimirAlerta('El email proporcionado es inválido', 'error');
+                break;
+
+            case 'auth/email-already-in-use':
+                imprimirAlerta('El email ya se encuentra registrado', 'error');
+                break;
+
+            case 'auth/weak-password':
+                imprimirAlerta('Contraseña mín. 6 caracteres', 'error');
+                break;
+            
+            
+            default:
+                break;
+        }
+    }   
+}
+
+async function sendDataApi(usuario) {
+    let usuarios;
+    try {
+        const response = await fetch(url);
+        const result = await response.json();
+        usuarios = result
     } catch (error) {
         console.log(error);
     }
+    const id = Object.values(usuarios).length
 
-    sentDataApi();    
-
-}
-
-async function sentDataApi() {
+    const {nombre, telefono, documento, email} = usuario;
     const user = {
-        nombre: name.value,
-        telefono: phone.value,
-        documento: documento.value,
-        email: email.value,
-        password: password.value,
-        estado: "Activo",
-        id: 5
-
+        nombre,
+        telefono,
+        documento,
+        email,
+        estado: 'Activo',
+        id
     }
     try {
         await fetch(url, {
@@ -59,5 +101,27 @@ async function sentDataApi() {
 
     } catch (error) {
         console.log(error)
+    }
+}
+
+
+
+function imprimirAlerta(mensaje, tipo) {
+    const alerta = document.querySelector('.alerta');
+
+    if(!alerta) {
+        const divMensaje = document.createElement('div');
+        divMensaje.classList.add('mt-3', 'mb-0', 'text-center', 'alerta')
+        if(tipo) {
+            divMensaje.classList.add('alert', 'alert-danger', 'text-danger');
+        }else {
+            divMensaje.classList.add('alert', 'alert-success')
+        }
+        divMensaje.textContent = mensaje;
+        formulario.appendChild(divMensaje);
+    
+        setTimeout(() => {
+            divMensaje.remove()
+        }, 3000);
     }
 }

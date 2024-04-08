@@ -257,7 +257,7 @@ tr th {
 }
 
 input[type="submit"] {
-    margin-top: 10px;
+    margin: 10px 0;
     width: 100%;
     padding: 10px;
     background-color: rgb(64, 153, 255,.5);
@@ -293,7 +293,7 @@ input[type="submit"]:hover {
     }
     .formulario-register {
         position: absolute;
-        top: 50%;
+        top: 47%;
         left: 50%;
         transform: translate(-50%, -50%);
         transition: left .3s linear;
