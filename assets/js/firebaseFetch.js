@@ -14,8 +14,8 @@ class FirebaseUser{
                 return res.json();
             })
             .then((data) => {
-                console.log('Data from Firebase:', data);
                 this.createTable(data);
+                return data;
             })
             .catch((error) => {
                 console.error('Error en getDataUsers:', error);
@@ -40,30 +40,45 @@ class FirebaseUser{
             .finally();
     }
      //creamos metodo para crear la tabla y traer los datos
-     createTable(data) {
-        let contRow = 1;
-        let rowTable = "";
-        let btnActions = "";
-
-        for (const user in data) {
-            let getId = "'" + user + "'";
-            btnActions = '<div class="d-flex justify-content-around icon-table">' +
-                '<button type="button" class="btn btn-primary" onclick="showUser(' + getId + ')"><span class="feather icon-eye"><p class="d-inline text-icn">Detalles</p></span></button>' +
-                '<button type="button" class="btn btn-primary" onclick="editUser(' + getId + ')"><span class="feather icon-edit-2"><p class="d-inline">Editar</p></span></button>' +
-                '<button type="button" class="btn btn-primary" onclick="deleteUser(' + getId + ')"><span class="feather icon-trash"><p class="d-inline">Eliminar</p></span></button>' +
-                '</div>';
-
-            rowTable += '<tr class="bg-white">' +
-                "<td>" + contRow + "</td>" +
-                "<td>" + data[user].img + "</td>" +
-                "<td>" + data[user].nombre + "</td>" +
-                "<td>" + data[user].nickname + "</td>" +
-                "<td class='text-center'>" + data[user].valor + "</td>" +
-                "<td class='text-center'>" + btnActions + "</td>" +
-                '<tr>';
-            contRow++;
-        }
-        this.objUser.innerHTML = rowTable;
+     createTable(users) {
+        this.objUser.innerHTML = '';
+        const usuarios = Object.values(users);
+        const keys = Object.keys(users);
+        usuarios.forEach((usuario, i) => {
+            const {id, nombre, email, telefono, documento, estado} = usuario;
+            const tr = document.createElement('tr');
+            tr.classList.add('bg-white');
+            tr.innerHTML = `
+            <td></td>
+                <td>${id}</td>
+                <td>${nombre}</td>
+                <td>${email}</td>
+                <td>${telefono}</td>
+                <td>${documento}</td>
+                <td><div class="bg-success text-center p-1 rounded">${estado}</div></td>
+                <td>
+                    <div class="d-flex justify-content-around icon-table">
+                        <a href="#" class="fs-1" onclick="showUser('${keys[i]}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <span class="feather icon-eye">
+                                <p class="d-inline text-icn">Detalles</p>
+                            </span>
+                        </a>
+                        <a href="#" onclick="editUser('${keys[i]}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <span class="feather icon-edit-2">
+                                <p class="d-inline">Editar</p>    
+                            </span>
+                        </a>
+                        <a href="#" onclick="deleteUser('${keys[i]}')">
+                            <span class="feather icon-trash">
+                                <p class="d-inline">Eliminar</p>
+                            </span>
+                        </a>
+                    </div>
+                </td>
+            
+                `
+                this.objUser.appendChild(tr);
+        })
     }
     //creamos un metodo para crear un usuario 
     async setCreateUser(data) {
@@ -126,6 +141,7 @@ class FirebaseUser{
                 return res.json();
             })
             .then((data) => {
+                this.getDataUsers();
                 return data;
             })
             .catch((error) => {

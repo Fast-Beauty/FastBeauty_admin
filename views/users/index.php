@@ -14,7 +14,8 @@
                 </div>
         </div>
         <div class="d-flex justify-content-end align-items-center border-bottom pb-3">
-            <a href="?c=Users&m=create" class="py-3 px-5 rounded text-white add">Nuevo</a>
+            <!-- <a href="?c=Users&m=create" class="py-3 px-5 rounded text-white add">Nuevo</a> -->
+            <a href="#" class="py-3 px-5 rounded text-white add" data-bs-toggle="modal" data-bs-target="#exampleModal">Nuevo</a>
         </div>
         <div class="row align-items-start">
             <div class="col-lg-12">
@@ -34,39 +35,7 @@
                                 </tr>
                             </thead>
                             <tbody id="tbody">
-                                <!--Tabla usuarios
-                                <?php
-                                //while($datos = $sql->fetch_object()) {
-                                ?>
-                                <tr class="bg-white">
-                                    <td>Imagen</td>
-                                    <td><?//=$datos->id?></td>
-                                    <td><?//=$datos->name?></td>
-                                    <td><?//=$datos->email?></td>
-                                    <td><?//=$datos->phone?></td>
-                                    <td><?//=$datos->type_document?></td>
-                                    <td><div class="bg-success text-center p-1 rounded">Activo</div></td>
-                                    <td>
-                                        <div class="d-flex justify-content-around icon-table">
-                                            <a href="#" class="fs-1">
-                                                <span class="feather icon-eye">
-                                                    <p class="d-inline text-icn">Detalles</p>
-                                                </span>
-                                            </a>
-                                            <a href="?c=Users&m=edit&id=<?=$datos->id?>">
-                                                <span class="feather icon-edit-2">
-                                                    <p class="d-inline">Editar</p>    
-                                                </span>
-                                            </a>
-                                            <a href="?c=Users&m=delete&id=<?=$datos->id?>">
-                                                <span class="feather icon-trash">
-                                                    <p class="d-inline">Eliminar</p>
-                                                </span>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <?php // }?>-->
+                                
                             </tbody>
                         </table>
                     </div>
@@ -86,9 +55,45 @@
     </div>
 </div>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action="" class="bg-white px-5 py-4 formulario-user" method="post">
+        <h3 class="mb-4 text-center">Nuevo Usuario</h3>
+        <div class="d-flex flex-column mt-2 campo">
+            <label for="nombre">Nombre:</label>
+            <input id="name" name="name" type="text" placeholder="Nombre Completo" autocomplete="off" class="input-form-user py-3 px-2">
+        </div>
+
+        <div class="d-flex flex-column mt-2 campo">
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" placeholder="Email" autocomplete="off" class="input-form-user py-3 px-2">
+        </div>
+
+        <div class="d-flex flex-column mt-2 campo">
+            <label for="tel">Teléfono:</label>
+            <input id="phone" name="phone" type="tel" placeholder="Teléfono" autocomplete="off" class="input-form-user py-3 px-2">
+        </div>
+
+        <div class="d-flex flex-column mt-2 campo">
+            <label for="documento">Documento:</label>
+            <input id="documento" name="documento" type="text" placeholder="Número de documento" autocomplete="off" class="input-form-user py-3 px-2">
+        </div>
+        <div class="d-flex flex-column mt-2 campo">
+            <input id="id" name="id" type="text" placeholder="Número de id" autocomplete="off" class="input-form-user py-3 px-2" hidden>
+        </div>
+        <div class="d-flex flex-column mt-2 campo">
+            <input id="idFirebase" name="id" type="text" placeholder="Número de id" autocomplete="off" class="input-form-user py-3 px-2" hidden>
+        </div>
+
+        <input type="submit" value="Guardar" class="submit-user w-100 mt-4 py-3 text-white">
+    </form>
+  </div>
+</div>
+
 </div>
 </div>
 </div>
 </div>
+
 <script src="./assets/js/firebaseFetch.js"></script>
 <script src="./assets/js/main.js"></script>
