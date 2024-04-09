@@ -218,7 +218,7 @@ tr th {
         padding: 17px 40px;
     }
 } 
-@media (min-height: 769px) { 
+@media (min-height: 780px) { 
     .formulario-register {
         padding: 40px;
     }
@@ -247,7 +247,7 @@ tr th {
         margin-bottom: 0px;
     }
 } 
-@media (min-height: 769px) { 
+@media (min-height: 780px) { 
     .campo label {
         margin-bottom: 10px;
     }
