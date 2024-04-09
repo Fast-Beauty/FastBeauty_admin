@@ -22,7 +22,6 @@ async function logUsuario(e) {
 
     if(!Object.values(user).every(user => user != '')) {
         imprimirAlerta('Debe rellenar todos los campos', 'error');
-        console.log('sisa')
         return
     }
 
