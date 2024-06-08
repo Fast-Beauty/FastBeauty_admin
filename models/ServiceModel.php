@@ -35,4 +35,5 @@ class ServiceModel {
     public function delete($id) {
         $sql = $this->svc->query("DELETE FROM services WHERE id=$id");
     }
+
 }
