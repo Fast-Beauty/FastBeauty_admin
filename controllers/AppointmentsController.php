@@ -1,9 +1,5 @@
 <?php
 require_once 'models/AppointmentsModel.php';
-require_once 'models/ClientModel.php';
-require_once 'models/EmployeesModel.php';
-require_once 'models/StatusModel.php';
-require_once 'models/ServiceModel.php';
 
 
 

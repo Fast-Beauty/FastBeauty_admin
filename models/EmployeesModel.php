@@ -8,11 +8,7 @@ class EmployeesModel {
     }
 
     public function obtenerTrabajadores() {
-        $query = "SELECT u.id, u.name, u.lastname 
-FROM users u
-INNER JOIN employees e ON u.id = e.users_id
-LIMIT 0, 25;
-";
+        $query = "SELECT u.id, u.name, u.lastname FROM users u INNER JOIN employees e ON u.id = e.users_id LIMIT 0, 25;";
         $result = $this->svc->query($query);
         $trabajadores = [];
 

@@ -35,6 +35,32 @@
                         </li>
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-user"></i></span>
+                                <span class="pcoded-mtext">Clientes</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=Clients&m=index" class="waves-effect waves-dark">
+                                        <span class="">Listar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-user"></i></span>
+                                <span class="pcoded-mtext">Trabajador</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=Employees&m=index" class="waves-effect waves-dark">
+                                        <span class="">Listar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">
                                     <i class="feather icon-box"></i>
                                 </span>
