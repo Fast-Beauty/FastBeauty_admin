@@ -1,4 +1,3 @@
-<!-- Contenido -->
 <?php
 $servername = "localhost";
 $username = "root";
@@ -13,10 +12,11 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = $conn->query("select * from productos");
+$sql = $conn->query("select * from services");
 
 
 ?>
+
 <div class="pcoded-content">
 
     <div class="page-header card my-0">
@@ -50,7 +50,7 @@ $sql = $conn->query("select * from productos");
                         </thead>
                         <tbody>
                             <?php
-                            while ($datos = $sql->fetch_object()) {
+                            while ($date = $sql->fetch_object()) {
                             ?>
                             <tr class="bg-white">
                                     <td><?=$datos->id?></td>

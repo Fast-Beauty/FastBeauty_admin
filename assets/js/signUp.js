@@ -114,7 +114,7 @@ function imprimirAlerta(mensaje, tipo) {
 
     if(!alerta) {
         const divMensaje = document.createElement('div');
-        divMensaje.classList.add('mt-3', 'mb-0', 'text-center', 'alerta')
+        divMensaje.classList.add('mb-0', 'text-center', 'alerta')
         if(tipo) {
             divMensaje.classList.add('alert', 'alert-danger', 'text-danger');
         }else {

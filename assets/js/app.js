@@ -76,7 +76,6 @@ if(window.innerWidth >= 992){
     }
 
     function sliderBack() {
-        console.log('dentro')
 
         sliding.style.transform = `translate(0px)`;
         sliding.classList.remove('reference');

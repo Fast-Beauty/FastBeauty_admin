@@ -213,6 +213,17 @@ tr th {
     }
 }
 
+@media (min-height: 576px) { 
+    .formulario-register {
+        padding: 17px 40px;
+    }
+} 
+@media (min-height: 780px) { 
+    .formulario-register {
+        padding: 40px;
+    }
+} 
+
 @media (min-width: 1400px) {
     .formulario-login,
     .formulario-register {
@@ -230,9 +241,17 @@ tr th {
     margin-bottom: 15px;
 }
 
-.campo label {
-    margin-bottom: 10px;
-}
+
+@media (min-height: 576px) { 
+    .campo label {
+        margin-bottom: 0px;
+    }
+} 
+@media (min-height: 780px) { 
+    .campo label {
+        margin-bottom: 10px;
+    }
+} 
 
 .campo input {
     padding: 15px 10px;
