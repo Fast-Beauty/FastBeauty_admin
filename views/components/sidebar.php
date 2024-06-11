@@ -10,6 +10,19 @@
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon"><i class="feather icon-user"></i></span>
+                                <span class="pcoded-mtext">Citas</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=Appointments&m=index" class="waves-effect waves-dark">
+                                        <span class="">Listar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-user"></i></span>
                                 <span class="pcoded-mtext">Usuarios</span>
                             </a>
                             <ul class="pcoded-submenu">
