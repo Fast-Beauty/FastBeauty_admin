@@ -53,9 +53,9 @@
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="status">Estado:</label>
                                 <select id="status" class="input-form-user py-3 px-2" name="status" disabled>
-                                    <?php foreach ($status as $statu): ?>
-                                        <option value="<?= $statu['status'] ?>" <?= $statu['status'] == $user['status'] ? 'selected' : '' ?>>
-                                            <?= $statu['status'] ?>
+                                    <?php foreach ($users as $user): ?>
+                                        <option value="<?= $user['id'] ?>" <?= $user['id'] == $client['users_id'] ? 'selected' : '' ?>>
+                                            <?= $user['status'] ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>

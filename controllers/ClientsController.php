@@ -49,10 +49,13 @@ class ClientsController
     if (isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id']; // Obtener el ID del cliente de la URL
         $client = $this->modelosvc->getClientsById($id); // Obtener datos del cliente por su ID
-        $users = $this->modelosvc->getUsers();
-        $status = $this->modelosvc->getStatus(); // Obtener todos los usuarios disponibles
-        $genders = $this->modelosvc->getGenders();
+         // Obtener todos los usuarios disponibles 
         if ($client) {
+            $users = $this->modelosvc->getUsers();
+            $status = $this->modelosvc->getStatus();
+            $genders = $this->modelosvc->getGenders(); 
+            //$clientDetails = array_merge($status, $users);
+
             require_once('views/components/layout/head.php');
             require_once('views/clients/edit.php');
             require_once('views/components/layout/footer.php');
