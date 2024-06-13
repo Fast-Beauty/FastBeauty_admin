@@ -12,7 +12,7 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                        <form action="?c=Products&m=createupdate" class="bg-white px-5 py-4 formulario-user" method="post">
+                    <form action="?c=Products&m=createupdate" class="bg-white px-5 py-4 formulario-user" method="post">
                         <h3 class="mb-4 text-center">Editar Producto</h3>
                         <input type="hidden" value="<?=$_GET["id"]?>" name="id">
                         <?php foreach($this->modelosvc->obtenerId($_GET['id']) as $datos): ?>
@@ -48,12 +48,30 @@
 
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="mark_id">Marca:</label>
-                                <input id="mark_id" type="text" placeholder="Marca del producto" autocomplete="off" value="<?= $datos['mark_id'] ?>" class="input-form-user py-3 px-2" name="mark_id">
+                                <select name="mark_id" id="mark_id" class="input-form-user py-3 px-2">
+                                    <?php 
+                                    foreach($this->modelosvc->obtenerMarcas() as $data):
+                                        if ($data['id'] == $datos['mark_id'] ) {?>
+                                            <option value="<?=$data['id']?>" selected><?=$data['name']?></option>
+                                        <?php } else { ?>
+                                            <option value="<?=$data['id']?>"><?=$data['name']?></option>
+                                        <?php }
+                                endforeach; ?>
+                                </select>
                             </div>
 
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="branch_office_id">Sucursal:</label>
-                                <input id="branch_office_id" type="text" placeholder="Sucursal" autocomplete="off" value="<?= $datos['branch_office_id'] ?>" class="input-form-user py-3 px-2" name="branch_office_id">
+                                <select name="mark_id" id="mark_id" class="input-form-user py-3 px-2">
+                                    <?php 
+                                    foreach($this->modelosvc->obtenerSucursales() as $data):
+                                        if ($data['id'] == $datos['branch_office_id'] ) {?>
+                                            <option value="<?=$data['id']?>" selected><?=$data['name']?></option>
+                                        <?php } else { ?>
+                                            <option value="<?=$data['id']?>"><?=$data['name']?></option>
+                                        <?php }
+                                    endforeach; ?>
+                                </select>
                             </div>
                         <?php endforeach; ?>
 

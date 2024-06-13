@@ -37,7 +37,7 @@ class ProductsController {
         $category = $_POST['category'];
         $mark_id = $_POST['mark_id'];
         $branch_office_id = $_POST['branch_office_id'];
-        $data = "'".$name."', '".$description."', ".$price.", ".$quantity.", ".$date.", '".$category."', '".$mark_id."', ".$branch_office_id;
+        $data = "'".$name."', '".$description."', '".$price."', '".$quantity."', '".$date."', '".$category."', '".$mark_id."', ".$branch_office_id;
 
         if(!empty($_POST["btnEditar"])) {
 
@@ -68,6 +68,8 @@ class ProductsController {
         require_once('views/components/layout/footer.php');
     }
     public function delete() {
-        require_once('views/products/code/code_delete.php');
+        $this->modelosvc->delete($_GET['id']);
+        
+        header("location:?c=Products&m=index");
     }
 }

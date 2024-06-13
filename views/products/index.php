@@ -44,11 +44,11 @@
                                         <td class="text-center"><?=$datos['quantity']?></td>
                                         <td class="text-center"><?=$datos['date']?></td>
                                         <td class="text-center"><?=$datos['category']?></td>
-                                        <td class="text-center"><?=$datos['mark_id']?></td>
-                                        <td class="text-center"><?=$datos['branch_office_id']?></td>
+                                        <td class="text-center"><?=$this->modelosvc->obtenerMarca($datos['id'])?></td>
+                                        <td class="text-center"><?=$this->modelosvc->obtenerSucursal($datos['id'])?></td>
                                         <td>
                                             <div class="d-flex justify-content-around icon-table">
-                                                <a href="?c=Products&m=show">
+                                                <a href="?c=Products&m=show&id=<?= $datos['id'] ?>">
                                                     <span class="feather icon-eye">
                                                         <p class="d-inline text-icn">Detalles</p>
                                                     </span>
