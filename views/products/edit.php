@@ -62,7 +62,7 @@
 
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="branch_office_id">Sucursal:</label>
-                                <select name="mark_id" id="mark_id" class="input-form-user py-3 px-2">
+                                <select name="branch_office_id" id="branch_office_id" class="input-form-user py-3 px-2">
                                     <?php 
                                     foreach($this->modelosvc->obtenerSucursales() as $data):
                                         if ($data['id'] == $datos['branch_office_id'] ) {?>
