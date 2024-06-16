@@ -58,6 +58,13 @@
                                     </a>
                                 </li>
                             </ul>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=EmployeesImages&m=index" class="waves-effect waves-dark">
+                                        <span class="">Imagenes</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">

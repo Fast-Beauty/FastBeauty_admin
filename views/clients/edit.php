@@ -54,7 +54,7 @@
                                 <label for="status">Estado:</label>
                                 <select id="status" class="input-form-user py-3 px-2" name="status" disabled>
                                     <?php foreach ($users as $user): ?>
-                                        <option value="<?= $user['id'] ?>" <?= $user['id'] == $client['users_id'] ? 'selected' : '' ?>>
+                                        <option value="<?= $employeesDetails['status'] ?>" <?= $user['id'] == $client['users_id'] ? 'selected' : '' ?>>
                                             <?= $user['status'] ?>
                                         </option>
                                     <?php endforeach; ?>
@@ -63,7 +63,7 @@
 
                             <!-- Otros campos del cliente -->
 
-                            <button type="submit" class="btn btn-primary mt-4">Actualizar</button>
+                            <button type="submit" class="submit-user w-100 mt-4 py-3 text-white">Actualizar</button>
                         </form>
                     </div>
                 </div>
