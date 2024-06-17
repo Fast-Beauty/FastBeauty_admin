@@ -46,19 +46,9 @@
                                         <span class="">Listar</span>
                                     </a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
-                            <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                <span class="pcoded-micon">
-                                    <i class="feather icon-image"></i>
-                                </span>
-                                <span class="pcoded-mtext">Imagenes de Productos</span>
-                            </a>
-                            <ul class="pcoded-submenu">
                                 <li class="">
                                     <a href="?c=ProductsImages&m=index" class="waves-effect waves-dark">
-                                        <span class="">Listar</span>
+                                        <span class="">Imagenes</span>
                                     </a>
                                 </li>
                             </ul>
