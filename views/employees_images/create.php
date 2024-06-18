@@ -15,11 +15,11 @@
                             <h3 class="mb-4 text-center">Agregar Imagen de Trabajador</h3>
                             
                             <div class="d-flex flex-column mt-2 campo">
-                                <label for="user_id">Seleccionar Trabajador:</label>
-                                <select id="user_id" class="input-form-user py-3 px-2" name="user_id" required>
-                                    <option value="">Seleccione un usuario</option>
-                                    <?php foreach ($users as $user): ?>
-                                        <option value="<?= $user['id'] ?>"><?= $user['name'] . ' ' . $user['lastname'] . ' (' . $user['status'] . ')' ?></option>
+                                <label for="employee_id">Seleccionar Trabajador:</label>
+                                <select id="employee_id" class="input-form-user py-3 px-2" name="employee_id" required>
+                                    <option value="">Seleccione un trabajador</option>
+                                    <?php foreach ($employees as $employee): ?>
+                                        <option value="<?= $employee['id'] ?>"><?= $employee['user_name'] . ' ' . $employee['user_lastname'] . ' (' . $employee['status'] . ')' ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>

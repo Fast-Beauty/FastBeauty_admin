@@ -46,27 +46,32 @@ class EmployeesImagesController
     public function create()
     {
         // Obtener la lista de usuarios activos/inactivos
-        $users = $this->modelosvc->getUsers();
-        require_once ('views/components/layout/head.php');
+        $employees = $this->modelosvc->getEmployeesWithUserInfo();        require_once ('views/components/layout/head.php');
         require_once ('views/employees_images/create.php');
         require_once ('views/components/layout/footer.php');
     }
 
     public function createupdate()
-    {
-        $Employees_id = $_POST['user_id'];
-        $tipo_imagen = $_POST['tipo_imagen'];
-        $imagen = file_get_contents($_FILES['imagen']['tmp_name']);
-        $imagen = base64_encode($imagen);
+{
+    $employee_id = $_POST['employee_id'];
+    $tipo_imagen = $_POST['tipo_imagen'];
+    $imagen = file_get_contents($_FILES['imagen']['tmp_name']);
+    $imagen = base64_encode($imagen);
 
-        $insertado = $this->modelosvc->insert($Employees_id, $imagen, $tipo_imagen);
-
-        if ($insertado) {
-            header("location:?c=EmployeesImages&m=index");
-        } else {
-            echo "Error al insertar la imagen";
-        }
+    // Validar que el ID del empleado exista en la tabla `employees`
+    if (!$this->modelosvc->employeeExists($employee_id)) {
+        echo "Error: El ID de empleado no existe en la tabla employees.";
+        return;
     }
+
+    $insertado = $this->modelosvc->insert($employee_id, $imagen, $tipo_imagen);
+
+    if ($insertado) {
+        header("location:?c=EmployeesImages&m=index");
+    } else {
+        echo "Error al insertar la imagen";
+    }
+}
 
     public function edit()
     {
