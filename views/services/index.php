@@ -26,7 +26,7 @@
                                     <th class="text-center" scope="col">Nombre</th>
                                     <th class="text-center" scope="col">Descripción</th>
                                     <th class="text-center" scope="col">Precio</th>
-                                    <th class="text-center" scope="col">Tiempo</th>
+                                    <th class="text-center" scope="col">Tiempo (mins)</th>
                                     <th class="text-center" scope="col">Sucursal</th>
                                     <th class="text-center" scope="col" class="text-center">Acciones</th>
                                 </tr>

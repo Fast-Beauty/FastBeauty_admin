@@ -45,7 +45,7 @@ class ServicesController{
         $price = $_POST['price'];
         $time = $_POST['time'];
         $branch_office_id = $_POST['branch_office_id'];
-        $data = "'".$name."', '".$description."', '".$price."', '.$time', ".$branch_office_id;
+        $data = "'".$name."', '".$description."', '".$price."', '$time', ".$branch_office_id;
 
         if(!empty($_POST["btnEditar"])) {
 
