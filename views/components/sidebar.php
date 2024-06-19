@@ -4,9 +4,10 @@
         <nav class="pcoded-navbar">
             <div class="nav-list">
                 <div class="pcoded-inner-navbar main-menu">
-                    <div class="pcoded-navigation-label">Navigation</div>
+                    <div class="pcoded-navigation-label">Nenú</div>
                     <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid"
                         subitem-border="false">
+
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon"><i class="feather icon-user"></i></span>
@@ -20,6 +21,7 @@
                                 </li>
                             </ul>
                         </li>
+
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">
@@ -35,6 +37,21 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-bookmark"></i></span>
+                                <span class="pcoded-mtext">Marcas</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=Mark&m=index" class="waves-effect waves-dark">
+                                        <span class="">Listar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">
@@ -50,6 +67,7 @@
                                 </li>
                             </ul>
                         </li>
+
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon"><i class="feather icon-briefcase"></i></span>
@@ -63,6 +81,21 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-image"></i></span>
+                                <span class="pcoded-mtext">Imgenes de Servicios</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=ServicesImages&m=index" class="waves-effect waves-dark">
+                                        <span class="">Listar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
             </div>

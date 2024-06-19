@@ -1,18 +1,18 @@
 <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "fastbeauty_db";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "fastbeauty_db";
 
-        // conxeion db
-        $conn = new mysqli($servername, $username, $password, $dbname);
+// conxeion db
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-        // verficar conexion
-        if ($conn->connect_error) {
-            die("Conexión fallida: " . $conn->connect_error);
-        }
+// verficar conexion
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
 ?>
-<?php 
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $email = $_POST["email"];
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "INSERT INTO users (name, email, phone, password) VALUES ('$name', '$email' ,'$phone', '$password')";
 
-  
+
 
     if ($conn->query($sql) === TRUE) {
         echo "Nuevo usuario agregado correctamente.";

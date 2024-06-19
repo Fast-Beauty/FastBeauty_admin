@@ -13,9 +13,18 @@ const formularioDocumento = formulario.querySelector('#documento');
 const formularioId = formulario.querySelector('#id');
 const formularioIdFirebase = formulario.querySelector('#idFirebase');
 const btnFormulario = formulario.querySelector('input[type="submit"]');
+const btnNuevo = document.querySelector('.add');
 
 //Eventos
 formulario.addEventListener('submit', validarFormulario);
+btnNuevo.addEventListener('click', () => {
+    formulario.reset();
+    formularioNombre.disabled = false;
+    formularioEmail.disabled = false;
+    formularioTelefono.disabled = false;
+    formularioDocumento.disabled = false;
+    btnFormulario.hidden = false;
+})
 
 //Funciones
 function getDataUser() {
@@ -42,7 +51,7 @@ async function editUser(id) {
 }
 
 function deleteUser(id) {
-     
+    
     const confirmar = confirm('¿Esta seguro que quiere borrar este registro?');
     if(confirmar) {
         firebaseUser.setDeleteUser(id);
@@ -94,6 +103,7 @@ async function validarFormulario(e) {
         }
         firebaseUser.setCreateUser(user);
         imprimirAlerta('Se ha creado el usuario correctamente');
+        formulario.reset();
     }
 }
 
@@ -118,7 +128,7 @@ function imprimirAlerta(mensaje, tipo) {
 
 
 }
- 
+
 // async function prueba() {
 //     const users = await firebaseUser.getDataUsers();
 //     console.log(users, users.length)

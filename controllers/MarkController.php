@@ -1,32 +1,32 @@
 <?php
 
-require_once 'models/ServicesModel.php';
+require_once 'models/MarkModel.php';
 
-class ServicesController{
+class MarkController{
 
     private $modelosvc;
 
     public function __CONSTRUCT() {
-        $this->modelosvc = new ServicesModel();
+        $this->modelosvc = new MarkModel();
     }
 
     public function index(){  
         require_once('views/components/layout/head.php');
-        require_once('views/services/index.php');
+        require_once('views/mark/index.php');
         require_once('views/components/layout/footer.php');
     }
 
     public function show(){
 
         require_once('views/components/layout/head.php');
-        require_once('views/services/show.php');
+        require_once('views/mark/show.php');
         require_once('views/components/layout/footer.php');
 
     }
     
     public function edit(){
         require_once('views/components/layout/head.php');
-        require_once('views/services/edit.php');
+        require_once('views/mark/edit.php');
         require_once('views/components/layout/footer.php');
 
     }
@@ -34,28 +34,20 @@ class ServicesController{
     public function create(){
 
         require_once('views/components/layout/head.php');
-        require_once('views/services/create.php');
+        require_once('views/mark/create.php');
         require_once('views/components/layout/footer.php');
 
     }
 
     public function createupdate() {
         $name = $_POST['name'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
-        $time = $_POST['time'];
-        $branch_office_id = $_POST['branch_office_id'];
-        $data = "'".$name."', '".$description."', '".$price."', '.$time', ".$branch_office_id;
+        $data = "'".$name."'";
 
         if(!empty($_POST["btnEditar"])) {
 
             $id = $_POST['id'];
             $datos = array(
                 'name' => $name,
-                'description' => $description,
-                'price' => $price,
-                'time' => $time,
-                'branch_office_id' => $branch_office_id,
                 'id' => $id
             );
 
@@ -64,15 +56,13 @@ class ServicesController{
             $this->modelosvc->insert($data);
         }
 
-        header("location:?c=Services&m=index");
+        header("location:?c=Mark&m=index");
     }
     
     public function delete() {
         $this->modelosvc->delete($_GET['id']);
         
-        header("location:?c=Services&m=index");
+        header("location:?c=Mark&m=index");
     }
 
 }
-
-?>
