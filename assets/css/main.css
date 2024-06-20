@@ -198,6 +198,13 @@ tr th {
 .formulario-login {
     padding: 30px;
 }
+
+.campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+}
+
 @media (min-width: 992px) {
     .formulario-login,
     .formulario-register {
@@ -225,9 +232,11 @@ tr th {
 } 
 
 @media (min-width: 1400px) {
-    .formulario-login,
-    .formulario-register {
+    .formulario-login {
         width: 30%;
+    }
+    .formulario-register {
+        width: 40%;
     }
 }
 
@@ -253,7 +262,7 @@ tr th {
     }
 } 
 
-.campo input {
+.campo input, .campo select {
     padding: 15px 10px;
     border: 1px solid #BEBEBF;
     border-radius: 8px;
@@ -312,7 +321,7 @@ input[type="submit"]:hover {
     }
     .formulario-register {
         position: absolute;
-        top: 47%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         transition: left .3s linear;

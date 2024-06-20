@@ -5,7 +5,9 @@ import { auth } from "./firebase.js";
 const formulario = document.getElementById("formulario-register");
 const url = "https://api-users-6a304-default-rtdb.firebaseio.com/api/users.json";
 const name = formulario.querySelector('#name');
+const lastname = formulario.querySelector('#lastname');
 const phone = formulario.querySelector('#phone');
+const tipoDocumento = formulario.querySelector('#type_document');
 const documento = formulario.querySelector('#document');
 const email = formulario.querySelector('#correo-r');
 const password = formulario.querySelector('#password-r');
@@ -22,11 +24,14 @@ formulario.addEventListener("submit", registrarUsuario);
 async function registrarUsuario(e) {
     e.preventDefault();
     const user = {
-        nombre: name.value,
-        telefono: +phone.value,
-        documento: +documento.value,
+        name: name.value,
+        lastname: lastname.value,
+        phone: +phone.value,
+        type_document: tipoDocumento.value,
+        document: +documento.value,
         email: email.value,
         password: password.value,
+        status: "ACTIVE",
         confirmPasword: confirmPasword.value
     }
 
@@ -43,7 +48,8 @@ async function registrarUsuario(e) {
         const userCredentials = await createUserWithEmailAndPassword(auth, email.value, password.value);
         console.log(userCredentials);
         imprimirAlerta('Registrado con éxito');
-        sendDataApi(user); 
+        // sendDataApi(user); 
+        sendDataDB(user);
     } catch (error) {
         console.log(error);
         switch (error.code) {
@@ -105,6 +111,27 @@ async function sendDataApi(usuario) {
         console.log(error)
     }
 
+}
+
+async function sendDataDB(usuario) {
+    const url = '?c=Login&m=create';
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usuario)
+        });
+        const result = await response.json();
+        if (result.success == true) {
+            setTimeout(() => {
+                location.reload();
+            }, 1800);
+        }
+    } catch (error) {
+        console.log('Error:', error);
+    }
 }
 
 
