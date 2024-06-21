@@ -1,34 +1,13 @@
 [
-  {
-    "id": 0,
-    "nombre": "Lizeth Méndez",
-    "email": "correo1@correo.com",
-    "telefono": 123456,
-    "documento": 111222333,
-    "estado": "Activo"
-  },
-  {
-    "id": 1,
-    "nombre": "Diego Borbón",
-    "email": "correo2@correo.com",
-    "telefono": 3456789,
-    "documento": 333111222,
-    "estado": "Activo"
-  },
-  {
-    "id": 2,
-    "nombre": "Fabian Cifuentes",
-    "email": "correo3@correo.com",
-    "telefono": 987654,
-    "documento": 222111333,
-    "estado": "Activo"
-  },
-  {
-    "id": 3,
-    "nombre": "Alejandro Betancourth",
-    "email": "correo4@correo.com",
-    "telefono": 654321,
-    "documento": 2222333111,
-    "estado": "Activo"
-  }
+{
+  "id": 1,
+  "name": "Alejandro",
+  "lastname": "Betancourth",
+  "email": "correo@correo.com",
+  "phone": 3228315117,
+  "type_document" : "C.C",
+  "document": 1193534738,
+  "password": "hola",
+  "status": "ACTIVE"
+}
 ]

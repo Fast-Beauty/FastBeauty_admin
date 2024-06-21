@@ -45,17 +45,19 @@ class FirebaseUser{
         const usuarios = Object.values(users);
         const keys = Object.keys(users);
         usuarios.forEach((usuario, i) => {
-            const {id, nombre, email, telefono, documento, estado} = usuario;
+            const {id, name, lastname, email, phone, type_document, document: userDocument, status} = usuario;
             const tr = document.createElement('tr');
             tr.classList.add('bg-white');
             tr.innerHTML = `
             <td></td>
                 <td>${id}</td>
-                <td>${nombre}</td>
+                <td>${name}</td>
+                <td>${lastname}</td>
                 <td>${email}</td>
-                <td>${telefono}</td>
-                <td>${documento}</td>
-                <td><div class="bg-success text-center p-1 rounded">${estado}</div></td>
+                <td>${phone}</td>
+                <td>${type_document}</td>
+                <td>${userDocument}</td>
+                <td><div class="bg-success text-center p-1 rounded">${status}</div></td>
                 <td>
                     <div class="d-flex justify-content-around icon-table">
                         <a href="#" class="fs-1" onclick="showUser('${keys[i]}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
