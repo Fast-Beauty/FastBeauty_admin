@@ -10,7 +10,7 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <form action="?c=Employees&m=update" class="bg-white px-5 py-4 formulario-user" method="post">
-                            <h3 class="mb-4 text-center">Editar Cliente</h3>
+                            <h3 class="mb-4 text-center">Editar Trabajador</h3>
                             <input type="hidden" name="id" value="<?= $employees['id'] ?>">
 
                             <div class="d-flex flex-column mt-2 campo">

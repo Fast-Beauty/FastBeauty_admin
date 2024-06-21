@@ -51,7 +51,7 @@
                                                     </span>
                                                 </a>
                                                 <a href="?c=Employees&m=delete&id=<?= $datos['employees_id'] ?>">
-                                                    <span class="feather icon-trash=">
+                                                    <span class="feather icon-trash">
                                                         <p class="d-inline">Eliminar</p>
                                                     </span>
                                                 </a>

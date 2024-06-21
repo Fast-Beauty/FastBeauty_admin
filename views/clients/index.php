@@ -53,7 +53,7 @@
                                                     </span>
                                                 </a>
                                                 <a href="?c=Clients&m=delete&id=<?= $datos['client_id'] ?>">
-                                                    <span class="feather icon-trash=">
+                                                    <span class="feather icon-trash">
                                                         <p class="d-inline">Eliminar</p>
                                                     </span>
                                                 </a>
