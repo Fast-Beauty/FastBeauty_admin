@@ -1,5 +1,5 @@
 <?php
-class EmployeesModel
+class ClientModel
 {
     private $svc;
 
@@ -11,7 +11,7 @@ class EmployeesModel
     public function listar()
     {
         // Query para obtener los clientes
-        $query = "SELECT u.id AS user_id, u.name AS user_name, u.lastname AS user_lastname, u.document, u.status, e.id AS employees_id FROM users u INNER JOIN employees e ON u.id = e.users_id LIMIT 0, 25;";
+        $query = "SELECT u.id AS user_id, u.name AS user_name, u.lastname AS user_lastname, u.status, c.id AS client_id, c.gender, c.date_birth FROM users u INNER JOIN clients c ON u.id = c.users_id LIMIT 0, 25;";
         if ($result = $this->svc->query($query)) {
             $datos = $result->fetch_all(MYSQLI_ASSOC);
             return $datos;
@@ -21,13 +21,13 @@ class EmployeesModel
             return [];
         }
     }
-    public function insert($user_id)
+    public function insert($user_id, $client_gender, $client_datebirth)
     {
         // Preparar la consulta SQL
-        $sql = $this->svc->prepare("INSERT INTO employees (users_id) VALUES (?)");
+        $sql = $this->svc->prepare("INSERT INTO clients (users_id, gender, date_birth) VALUES (?, ?, ?)");
 
         // Vincular los parámetros a los marcadores de posición
-        $sql->bind_param("i",$user_id);
+        $sql->bind_param("iss",$user_id, $client_gender, $client_datebirth);
 
         // Ejecutar la consulta preparada
         $resultado = $sql->execute();
@@ -42,9 +42,9 @@ class EmployeesModel
 
 
 
-    public function getEmployeesById($id)
+    public function getClientsById($id)
     {
-        $query = "SELECT * FROM employees WHERE id = ?";
+        $query = "SELECT * FROM clients WHERE id = ?";
         $stmt = $this->svc->prepare($query);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -60,7 +60,7 @@ class EmployeesModel
 
     public function update($datos)
     {
-        $sql = "UPDATE employees SET users_id='{$datos['users_id']}' WHERE id='{$datos['id']}'";
+        $sql = "UPDATE clients SET date_birth='{$datos['date_birth']}', gender='{$datos['gender']}', users_id='{$datos['users_id']}' WHERE id='{$datos['id']}'";
 
         if ($this->svc->query($sql)) {
             // La actualización fue exitosa
@@ -71,30 +71,24 @@ class EmployeesModel
             return false;
         }
     }
-    public function updateStatus($employeeId, $status)
-    {
-        $employee = $this->getEmployeesById($employeeId);
-        if ($employee) {
-            $userId = $employee['users_id'];
-            $sql = "UPDATE users SET status = ? WHERE id = ?";
-            $stmt = $this->svc->prepare($sql);
-            $stmt->bind_param('si', $status, $userId);
-
-            return $stmt->execute();
-        }
-        return false;
-    }
 
     public function delete($id)
     {
-        $stmt = $this->svc->prepare("DELETE FROM employees WHERE id = ?");
+        $stmt = $this->svc->prepare("DELETE FROM clients WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $stmt->close();
     }
+
+    public function getClients()
+    {
+        $query = "SELECT c.id AS clients_id, u.id, u.name, u.lastname FROM users u INNER JOIN clients c ON u.id = c.users_id LIMIT 25";
+
+        return $this->ejecutarConsulta($query);
+    }
     public function getUsers()
     {
-        $query = "SELECT DISTINCT id, name, lastname, document, status FROM users WHERE status IN ('active', 'inactive')";
+        $query = "SELECT id, name, lastname, document, status FROM users";
         return $this->ejecutarConsulta($query);
     }
     public function getUserById($userId)
@@ -111,10 +105,12 @@ class EmployeesModel
             return null;
         }
     }
+    
+
     public function getStatus()
     {
         // Ejecutar la consulta SQL para obtener los estados
-        $query = "SELECT DISTINCT status FROM users WHERE status IN ('active', 'inactive')";
+        $query = "SELECT DISTINCT status FROM users";
         $result = $this->ejecutarConsulta($query);
 
         // Verificar si la consulta fue exitosa
@@ -125,6 +121,12 @@ class EmployeesModel
             return false; // o null, dependiendo de tu lógica
         }
     }
+    public function getGenders()
+{
+    $query = "SELECT DISTINCT gender FROM clients";
+    return $this->ejecutarConsulta($query);
+}
+
 
     private function ejecutarConsulta($query)
     {
