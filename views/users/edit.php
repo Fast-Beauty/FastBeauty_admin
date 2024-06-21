@@ -31,7 +31,7 @@
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="email">Email:</label>
                                 <input id="email" name="email" type="email" placeholder="Email" autocomplete="off" value="<?= $datos['email'] ?>"
-                                    class="input-form-user py-3 px-2">
+                                    class="input-form-user py-3 px-2" disabled>
                             </div>
 
                             <div class="d-flex flex-column mt-2 campo">

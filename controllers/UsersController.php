@@ -55,7 +55,6 @@ class UsersController {
             $datos = array(
                 'name' => $name,
                 'lastname' => $lastname,
-                'email' => $email,
                 'phone' => $phone,
                 'type_document' => $type_document,
                 'document' => $document,

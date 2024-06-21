@@ -34,7 +34,7 @@ class UsersModel {
     }
 
     public function update($datos) {
-        $sql = $this->svc->query("UPDATE users SET name='{$datos['name']}', lastname='{$datos['lastname']}', email='{$datos['email']}', phone={$datos['phone']}, type_document='{$datos['type_document']}', document={$datos['document']}, status='{$datos['status']}' WHERE id={$datos['id']}");
+        $sql = $this->svc->query("UPDATE users SET name='{$datos['name']}', lastname='{$datos['lastname']}', phone={$datos['phone']}, type_document='{$datos['type_document']}', document={$datos['document']}, status='{$datos['status']}' WHERE id={$datos['id']}");
     }
 
     public function delete($id) {
