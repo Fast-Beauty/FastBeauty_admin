@@ -12,26 +12,56 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                        <form action="views/products/code/code_create.php" class="bg-white px-5 py-4 formulario-user" method="post">
+                    <form action="?c=Products&m=createupdate" class="bg-white px-5 py-4 formulario-user" method="post">
                         <h3 class="mb-4 text-center">Nuevo Producto</h3>
                         <div class="d-flex flex-column mt-2 campo">
                             <label for="nombre">Nombre:</label>
-                            <input id="nombre" name="name" type="text" placeholder="Nombre Completo" autocomplete="off" class="input-form-user py-3 px-2">
+                            <input id="nombre" type="text" placeholder="Nombre Completo" autocomplete="off" class="input-form-user py-3 px-2" name="name">
+                        </div>
+                        
+                        <div class="d-flex flex-column mt-2 campo">
+                            <label for="description">Descripción:</label>
+                            <input id="description" type="text" placeholder="Descripción" autocomplete="off" class="input-form-user py-3 px-2" name="description">
                         </div>
 
                         <div class="d-flex flex-column mt-2 campo">
                             <label for="precio">Precio:</label>
-                            <input id="precio" name="precio" type="text" placeholder="Precio Producto" autocomplete="off" class="input-form-user py-3 px-2">
+                            <input id="precio" type="text" placeholder="Precio Producto" autocomplete="off" class="input-form-user py-3 px-2" name="price">
                         </div>
 
                         <div class="d-flex flex-column mt-2 campo">
-                            <label for="descripcion">Descripción:</label>
-                            <input id="descripcion" name="descripcion" type="text" placeholder="Descripción" autocomplete="off" class="input-form-user py-3 px-2">
+                            <label for="quantity">Cantidad:</label>
+                            <input id="quantity" type="number" placeholder="Cantidad del producto" autocomplete="off" class="input-form-user py-3 px-2" name="quantity">
                         </div>
 
                         <div class="d-flex flex-column mt-2 campo">
-                            <label for="imagen">Imagen:</label>
-                            <input id="imagen" name="image" type="file" class="input-form-user py-3 px-2">
+                            <label for="date">Fecha:</label>
+                            <input id="date" type="date" placeholder="Fecha de producto" autocomplete="off" class="input-form-user py-3 px-2" name="date">
+                        </div>
+
+                        <div class="d-flex flex-column mt-2 campo">
+                            <label for="category">Categoría:</label>
+                            <input id="category" type="text" placeholder="Categoría del producto" autocomplete="off" class="input-form-user py-3 px-2" name="category">
+                        </div>
+
+                        <div class="d-flex flex-column mt-2 campo">
+                            <label for="mark_id">Marca:</label>
+                            <select name="mark_id" id="mark_id" class="input-form-user py-3 px-2">
+                                <option value="" selected disabled>Seleccione la marca</option>
+                                <?php foreach($this->modelosvc->obtenerMarcas() as $datos): ?>
+                                    <option value="<?=$datos['id']?>"><?=$datos['name']?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+
+                        <div class="d-flex flex-column mt-2 campo">
+                            <label for="branch_office_id">Sucursal:</label>
+                            <select name="branch_office_id" id="branch_office_id" class="input-form-user py-3 px-2">
+                                <option value="" selected disabled>Seleccione la sucursal</option>
+                                <?php foreach($this->modelosvc->obtenerSucursales() as $datos): ?>
+                                    <option value="<?=$datos['id']?>"><?=$datos['name']?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
 
                         <input type="submit" value="Añadir Producto" class="submit-user w-100 mt-4 py-3 text-white">

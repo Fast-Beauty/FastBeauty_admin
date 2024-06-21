@@ -46,6 +46,11 @@
                                         <span class="">Listar</span>
                                     </a>
                                 </li>
+                                <li class="">
+                                    <a href="?c=ProductsImages&m=index" class="waves-effect waves-dark">
+                                        <span class="">Imagenes</span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">

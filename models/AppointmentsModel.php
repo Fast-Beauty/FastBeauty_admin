@@ -51,7 +51,7 @@ class AppointmentsModel
         $sql = $this->svc->prepare("INSERT INTO appointments (status, date, hora, clients_id, Employees_id, services_id) VALUES (?, ?, ?, ?, ?, ?)");
 
         // Vincular los parámetros a los marcadores de posición
-        $sql->bind_param("ssiiii", $status, $date, $hora, $clients_id, $Employees_id, $services_id);
+        $sql->bind_param("sssiii", $status, $date, $hora, $clients_id, $Employees_id, $services_id);
 
         // Ejecutar la consulta preparada
         $resultado = $sql->execute();
