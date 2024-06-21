@@ -37,13 +37,7 @@
                                         <td><?= $datos['id'] ?></td>
                                         <td><?= $datos['Employees_id'] ?></td>
                                         <td><?= $datos['user_name'] . ' ' . $datos['user_lastname'] ?></td>
-                                        <td>
-                                                <?php if (!empty($datos['imagen'])): ?>
-                                                    <img src="data:image/jpeg;base64,<?= $datos['imagen'] ?>" alt="Imagen del Trabajador" style="max-width: 100px;">
-                                                <?php else: ?>
-                                                    <p>No hay imagen disponible</p>
-                                                <?php endif; ?>
-                                            </td>
+                                        <td><img src="data:<?= $datos['tipo_imagen']; ?>;base64,<?= base64_encode($datos['imagen']); ?>" alt="Imagen"  style="max-width: 200px;"></td>
                                         <td><?= $datos['tipo_imagen'] ?></td>
                                         <td><div class="bg-success text-center p-1 rounded"><?= $datos['status'] ?></div></td>
                                         <td>

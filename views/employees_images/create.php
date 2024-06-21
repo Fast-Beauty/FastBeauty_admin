@@ -29,13 +29,6 @@
                                 <input type="file" class="form-control-file py-3 px-2" id="imagen" name="imagen" accept="image/*" required>
                                 <small id="imagenHelp" class="form-text text-muted">Formatos permitidos: JPEG, PNG, GIF. Tamaño máximo: 2MB.</small>
                             </div>
-
-                            <div class="d-flex flex-column mt-4 campo">
-                                <label for="tipo_imagen">Tipo de Imagen:</label>
-                                <input type="text" class="form-control py-3 px-2" id="tipo_imagen" name="tipo_imagen" required>
-                                <small id="tipoImagenHelp" class="form-text text-muted">Ejemplos: Foto de perfil, Documento de identidad, etc.</small>
-                            </div>
-
                             <input type="submit" value="Guardar" class="submit-user w-100 mt-4 py-3 text-white">
                             <a href="?c=EmployeesImages&m=index" class="btn btn-secondary w-100 mt-3">Cancelar</a>
                         </form>

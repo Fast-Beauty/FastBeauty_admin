@@ -54,9 +54,8 @@ class EmployeesImagesController
     public function createupdate()
 {
     $employee_id = $_POST['employee_id'];
-    $tipo_imagen = $_POST['tipo_imagen'];
+    $tipo_imagen = mime_content_type($_FILES['imagen']['tmp_name']);
     $imagen = file_get_contents($_FILES['imagen']['tmp_name']);
-    $imagen = base64_encode($imagen);
 
     // Validar que el ID del empleado exista en la tabla `employees`
     if (!$this->modelosvc->employeeExists($employee_id)) {
