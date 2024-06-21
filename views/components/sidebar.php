@@ -82,7 +82,7 @@
                             </ul>
 
                             <ul class="pcoded-submenu">
-                                <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                                <li class="" dropdown-icon="style1" subitem-icon="style1">
                                 <a href="?c=ServicesImages&m=index" class="waves-effect waves-dark">
                                         <span class="">Imagenes</span>
                                     </a>
