@@ -24,7 +24,7 @@
                                 <tr class="">
                                     <th scope="col">id</th>
                                     <th scope="col">Nombre</th>
-                                    <th scope="col">Documento</th>
+                                    <th scope="col">Fecha de nacimiento</th>
                                     <th scope="col">User_id</th>
                                     <th scope="col">Genero</th>
                                     <th scope="col" class="text-center">Estado</th>
@@ -36,7 +36,7 @@
                                     <tr class="bg-white">
                                         <td><?= $datos['client_id'] ?></td>
                                         <td><?= $datos['user_name'] . ' ' . $datos['user_lastname']?></td>
-                                        <td><?= $datos['document'] ?></td>
+                                        <td><?= $datos['date_birth'] ?></td>
                                         <td><?= $datos['user_id'] ?></td>
                                         <td><?= $datos['gender'] ?></td>
                                         <td><div class="bg-success text-center p-1 rounded"><?= $datos['status'] ?></div></td>

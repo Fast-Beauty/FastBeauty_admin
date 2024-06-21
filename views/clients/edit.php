@@ -41,16 +41,6 @@
                             </div>
 
                             <div class="d-flex flex-column mt-2 campo">
-                                <label for="document">Documento:</label>
-                                <select id="document" class="input-form-user py-3 px-2" name="document" readonly>
-                                    <?php foreach ($users as $user): ?>
-                                        <option value="<?= $user['id'] ?>" <?= $user['id'] == $client['users_id'] ? 'selected' : '' ?>>
-                                            <?= $user['document'] ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="d-flex flex-column mt-2 campo">
                                 <label for="status">Estado:</label>
                                 <select id="status" class="input-form-user py-3 px-2" name="status" disabled>
                                     <?php foreach ($users as $user): ?>

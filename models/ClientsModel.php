@@ -11,7 +11,7 @@ class ClientModel
     public function listar()
     {
         // Query para obtener los clientes
-        $query = "SELECT u.id AS user_id, u.name AS user_name, u.lastname AS user_lastname, u.document, u.status, c.id AS client_id, c.gender FROM users u INNER JOIN clients c ON u.id = c.users_id LIMIT 0, 25;";
+        $query = "SELECT u.id AS user_id, u.name AS user_name, u.lastname AS user_lastname, u.status, c.id AS client_id, c.gender, c.date_birth FROM users u INNER JOIN clients c ON u.id = c.users_id LIMIT 0, 25;";
         if ($result = $this->svc->query($query)) {
             $datos = $result->fetch_all(MYSQLI_ASSOC);
             return $datos;

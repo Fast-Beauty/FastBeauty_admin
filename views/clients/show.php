@@ -28,6 +28,10 @@
                                 <input id="user_document" type="text" value="<?= $clientDetails['document'] ?>" class="input-form-user py-3 px-2" name="user_document" disabled>
                             </div>
                             <div class="d-flex flex-column mt-2 campo">
+                                <label for="user_document">Fecha de cumpleaños:</label>
+                                <input id="user_document" type="text" value="<?= $clientDetails['date_birth'] ?>" class="input-form-user py-3 px-2" name="user_document" disabled>
+                            </div>
+                            <div class="d-flex flex-column mt-2 campo">
                                 <label for="user_status">Estado del Cliente:</label>
                                 <input id="user_status" type="text" value="<?= $clientDetails['status'] ?>" class="input-form-user py-3 px-2" name="user_status" disabled>
                             </div>
