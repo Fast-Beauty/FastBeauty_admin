@@ -38,7 +38,7 @@
                                         <td class="text-center"><?=$datos['name']?></td>
                                         <td class="text-center"><?=$datos['description']?></td>
                                         <td class="text-center"><?=$datos['price']?></td>
-                                        <td class="text-center"><?=$datos['time']?></td>
+                                        <td class="text-center"><?=$datos['time']?>mins</td>
                                         <td class="text-center"><?=$this->modelosvc->obtenerSucursal($datos['id'])?></td>
                                         <td>
                                             <div class="d-flex justify-content-around icon-table">

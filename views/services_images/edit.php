@@ -23,11 +23,11 @@
                             </div>
 
                             <div class="d-flex flex-column mt-2 campo">
-                                <label for="servicios_id">Servicio:</label>
-                                <select name="servicios_id" id="servicios_id" class="input-form-user py-3 px-2">
+                                <label for="services_id">Servicio:</label>
+                                <select name="services_id" id="services_id" class="input-form-user py-3 px-2">
                                     <?php 
                                     foreach($this->modelosvc->obtenerServicios() as $data):
-                                        if ($data['id'] == $datos['servicios_id'] ) {?>
+                                        if ($data['id'] == $datos['services_id'] ) {?>
                                             <option value="<?=$data['id']?>" selected><?=$data['name']?></option>
                                         <?php } else { ?>
                                             <option value="<?=$data['id']?>"><?=$data['name']?></option>

@@ -80,9 +80,25 @@
                                     </a>
                                 </li>
                             </ul>
+
+                            <ul class="pcoded-submenu">
+                                <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                                <a href="?c=ServicesImages&m=index" class="waves-effect waves-dark">
+                                        <span class="">Imagenes</span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            
                         </li>
 
-                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon"><i class="feather icon-image"></i></span>
                                 <span class="pcoded-mtext">Imgenes de Servicios</span>
@@ -94,11 +110,5 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+                        </li> -->
         <!-- Las etiquetas se cierran en el siguiente require, de esta forma se permite variar el contenido para usarlo en diferentes controladores -->

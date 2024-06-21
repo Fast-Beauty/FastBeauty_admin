@@ -7,7 +7,7 @@
                             <i class="feather icon-home bg-c-blue"></i>
                             <div class="d-inline">
                                 <h5>Administrador</h5>
-                                <span><A>¡Bienvenido! Aqui podras administrar todos los elementos de tu página </A></span>
+                                <span><A>¡Bienvenido!... Aqui podras administrar todos los elementos de tu sitio web. </A></span>
                             </div>
                         </div>
                     </div>
@@ -17,7 +17,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="index.php"><i class="feather icon-home"></i></a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#!">Dashboard</a> </li>
+                                <li class="breadcrumb-item"><a href="#!">Inicio</a> </li>
                             </ul>
                         </div>
                     </div>
