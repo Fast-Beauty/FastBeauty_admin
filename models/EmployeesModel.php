@@ -97,11 +97,11 @@ class EmployeesModel
         $query = "SELECT DISTINCT id, name, lastname, document, status FROM users WHERE status IN ('active', 'inactive')";
         return $this->ejecutarConsulta($query);
     }
-    public function getEmployeesImageById($id)
+    public function getUserById($userId)
     {
-        $query = "SELECT * FROM employees_images WHERE id = ?";
+        $query = "SELECT id, name, lastname, document, status FROM users WHERE id = ?";
         $stmt = $this->svc->prepare($query);
-        $stmt->bind_param("i", $id);
+        $stmt->bind_param("i", $userId);
         $stmt->execute();
         $result = $stmt->get_result();
     
@@ -111,8 +111,6 @@ class EmployeesModel
             return null;
         }
     }
-    
-
     public function getStatus()
     {
         // Ejecutar la consulta SQL para obtener los estados

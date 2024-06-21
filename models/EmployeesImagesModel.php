@@ -26,14 +26,24 @@ class EmployeesImagesModel
 
     public function insert($Employees_id, $imagen, $tipo_imagen)
     {
+        // Verificar si el Employees_id existe en la tabla employees
+        $query = "SELECT id FROM employees WHERE id = ?";
+        $stmt = $this->svc->prepare($query);
+        $stmt->bind_param("i", $Employees_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 0) {
+            throw new Exception("El ID de empleado no existe en la tabla employees.");
+        }
+
+        // Si existe, proceder a insertar
         $sql = $this->svc->prepare("INSERT INTO employees_images (Employees_id, imagen, tipo_imagen) VALUES (?, ?, ?)");
         $sql->bind_param("iss", $Employees_id, $imagen, $tipo_imagen);
-        $resultado = $sql->execute();
-
-        if ($resultado) {
+        if ($sql->execute()) {
             return true;
         } else {
-            return false;
+            throw new Exception("Error al insertar la imagen: " . $this->svc->error);
         }
     }
 
@@ -49,6 +59,28 @@ class EmployeesImagesModel
             return $result->fetch_assoc();
         } else {
             return null;
+        }
+    }
+    public function employeeExists($employee_id)
+    {
+        $query = "SELECT id FROM employees WHERE id = ?";
+        $stmt = $this->svc->prepare($query);
+        $stmt->bind_param("i", $employee_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->num_rows > 0;
+    }
+    public function getEmployeesWithUserInfo()
+    {
+        $query = "SELECT e.id, e.users_id, u.name AS user_name, u.lastname AS user_lastname, u.status 
+                  FROM employees e
+                  INNER JOIN users u ON e.users_id = u.id";
+        if ($result = $this->svc->query($query)) {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        } else {
+            echo "Error en la consulta: " . $this->svc->error;
+            return [];
         }
     }
     public function obtenerPorId($id) {

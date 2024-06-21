@@ -1,48 +1,38 @@
 <div class="pcoded-content">
-    <div class="page-header card my-0">
-        <div class="d-flex justify-content-between align-items-center pt-3">
-            <h3 class="font-weight-bolder">Detalles del Trabajador</h3>
-            <div class="page-header-breadcrumb">
-                <ul class="breadcrumb breadcrumb-title">
-                    <li class="breadcrumb-item">
-                        <a href="?c=Dashboard&m=dashboard"><i class="feather icon-home"></i></a>
-                    </li>
-                    <li class="breadcrumb-item"><a href="?c=EmployeesImages">Trabajadores</a></li>
-                    <li class="breadcrumb-item"><a href="#!">Detalles</a></li>
-                </ul>
-            </div>
+    <div class="page-header card">
+        <div class="back-user">
+            <a href="?c=Employees&m=index">
+                <span class="feather icon-arrow-left"></span> Volver
+            </a>
         </div>
-        <div class="row align-items-start">
-            <div class="col-lg-12">
+        <div class="row justify-content-center">
+            <div class="">
                 <div class="page-header-title">
                     <div class="d-inline">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Detalles del Trabajador</h5>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <strong>ID del Trabajador:</strong> <?= $datos['Employees_id'] ?>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <strong>Nombre:</strong> <?= $datos['user_name'] ?> <?= $datos['user_lastname'] ?>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <strong>Estado:</strong> <?= $datos['status'] ?>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <strong>Imagen:</strong><br>
-                                        <?php if (!empty($datos['imagen'])): ?>
-                                            <img src="data:image/jpeg;base64,<?= $datos['imagen'] ?>" alt="Imagen del Trabajador" style="max-width: 300px;">
-                                        <?php else: ?>
-                                            <p>No hay imagen disponible</p>
-                                        <?php endif; ?>
-                                    </li>
-                                </ul>
+                        <form class="bg-white px-5 py-4 formulario-user">
+                            <h3 class="mb-4 text-center">Detalles del Trabajador</h3>
+                            <div class="d-flex flex-column mt-2 campo">
+                                <label for="user_id">ID de usuario:</label>
+                                <input id="user_id" type="text" value="<?= $employeesDetails['id'] ?>" class="input-form-user py-3 px-2" name="user_id" disabled>
                             </div>
-                            <div class="card-footer text-right">
-                                <a href="?c=EmployeesImages" class="btn btn-secondary">Volver</a>
+                            <div class="d-flex flex-column mt-2 campo">
+                                <label for="user_name">Nombre del Trabajador:</label>
+                                <input id="user_name" type="text" value="<?= $employeesDetails['name'] ?>" class="input-form-user py-3 px-2" name="user_name" disabled>
                             </div>
-                        </div>
+                            <div class="d-flex flex-column mt-2 campo">
+                                <label for="user_lastname">Apellido del Trabajador:</label>
+                                <input id="user_lastname" type="text" value="<?= $employeesDetails['lastname'] ?>" class="input-form-user py-3 px-2" name="user_lastname" disabled>
+                            </div>
+                            <div class="d-flex flex-column mt-2 campo">
+                                <label for="user_document">Número de Documento:</label>
+                                <input id="user_document" type="text" value="<?= $employeesDetails['document'] ?>" class="input-form-user py-3 px-2" name="user_document" disabled>
+                            </div>
+                            <div class="d-flex flex-column mt-2 campo">
+                                <label for="user_status">Estado del Trabajador:</label>
+                                <input id="user_status" type="text" value="<?= $employeesDetails['status'] ?>" class="input-form-user py-3 px-2" name="user_status" disabled>
+                            </div>
+                            <!-- Agregar más campos según sea necesario -->
+                        </form>
                     </div>
                 </div>
             </div>
