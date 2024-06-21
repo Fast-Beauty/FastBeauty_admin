@@ -83,3 +83,4 @@
 </div>
 </div>
 </div>
+<script src="./assets/js/usersAdmin.js" type="module"></script> 
