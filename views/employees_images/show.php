@@ -32,7 +32,7 @@
                             <div class="mt-3">
                                 <label>Imagen del Trabajador:</label><br>
                                 <?php if (!empty($datosEmpleado['imagen'])): ?>
-                                    <img src="data:image/jpeg;base64,<?= $datosEmpleado['imagen'] ?>" alt="Imagen del Trabajador" style="max-width: 500px;">
+                                    <img src="data:<?= $datosEmpleado['tipo_imagen']; ?>;base64,<?= base64_encode($datosEmpleado['imagen']); ?>" alt="Imagen actual"  style="max-width: 200px;">
                                 <?php else: ?>
                                     <p>No hay imagen disponible</p>
                                 <?php endif; ?>

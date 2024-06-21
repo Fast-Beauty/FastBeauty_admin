@@ -99,7 +99,7 @@ class EmployeesImagesController
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $id = $_POST['id'];
-            $tipo_imagen = $_POST['tipo_imagen'];
+            $tipo_imagen = mime_content_type($_FILES['imagen']['tmp_name']);
     
             // Verificar si se subió una nueva imagen
             if ($_FILES['imagen']['size'] > 0) {

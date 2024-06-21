@@ -24,13 +24,13 @@
                             </div>
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="tipo_imagen">Tipo de Imagen:</label>
-                                <input id="tipo_imagen" type="text" value="<?= $datosEmpleado['tipo_imagen'] ?>" class="input-form-user py-3 px-2" name="tipo_imagen">
+                                <input id="tipo_imagen" type="text" value="<?= $datosEmpleado['tipo_imagen'] ?>" class="input-form-user py-3 px-2" name="tipo_imagen" disabled>
                                 <small class="text-muted">Escribe el tipo de imagen (por ejemplo: jpg, png, jpeg).</small>
                             </div>
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="imagen_actual">Imagen Actual:</label>
                                 <?php if (!empty($datosEmpleado['imagen'])): ?>
-                                    <img src="data:image/jpeg;base64,<?= $datosEmpleado['imagen'] ?>" alt="Imagen Actual" style="max-width: 100px;">
+                                    <img src="data:<?= $datosEmpleado['tipo_imagen']; ?>;base64,<?= base64_encode($datosEmpleado['imagen']); ?>" alt="Imagen actual"  style="max-width: 200px;">
                                 <?php else: ?>
                                     <p>No hay imagen disponible</p>
                                 <?php endif; ?>
