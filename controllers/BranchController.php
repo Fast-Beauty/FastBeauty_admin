@@ -38,7 +38,7 @@ class BranchController {
         $addres = $_POST['addres'];
         $google_location = $_POST['google_location'];
         $phone = $_POST['phone'];
-        $data = "'".$name."', '".$nit."', '".$addres."', '".$google_location."', '".$phone;
+        $data = "'".$name."', '".$nit."', '".$addres."', '".$google_location."', ".$phone;
 
         if(!empty($_POST["btnEditar"])) {
 

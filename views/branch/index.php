@@ -22,13 +22,12 @@
                         <table class="table table-hover table-borderless">
                             <thead>
                                 <tr class="">
-                                    <th scope="col"></th>
                                     <th scope="col">id</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">NIT</th>
                                     <th scope="col">Dirección</th>
+                                    <th scope="col">Ubicación</th>
                                     <th scope="col">Telefono</th>
-                                    <th scope="col" class="text-center">Estado</th>
                                     <th scope="col" class="text-center">Acciones</th>
                                 </tr>
                             </thead>
@@ -56,7 +55,7 @@
                                                     </span>
                                                 </a>
                                                 <a href="?c=Branch&m=delete&id=<?= $datos['id'] ?>">
-                                                    <span class="feather icon-trash=">
+                                                    <span class="feather icon-trash">
                                                         <p class="d-inline">Eliminar</p>
                                                     </span>
                                                 </a>
