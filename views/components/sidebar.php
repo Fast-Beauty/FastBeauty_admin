@@ -57,12 +57,27 @@
                             </a>
                             <ul class="pcoded-submenu">
                                 <li class="">
-                                    <a href="?c=Sucursales&m=index" class="waves-effect waves-dark">
+                                    <a href="?c=Branch&m=index" class="waves-effect waves-dark">
                                         <span class="">Listar</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-image"></i></span>
+                                <span class="pcoded-mtext">Imagenes de Sucursales</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=BranchImages&m=index" class="waves-effect waves-dark">
+                                        <span class="">Listar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon"><i class="feather icon-briefcase"></i></span>
@@ -71,6 +86,20 @@
                             <ul class="pcoded-submenu">
                                 <li class="">
                                     <a href="?c=Services&m=index" class="waves-effect waves-dark">
+                                        <span class="">Listar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-briefcase"></i></span>
+                                <span class="pcoded-mtext">Puntaje</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=Score&m=index" class="waves-effect waves-dark">
                                         <span class="">Listar</span>
                                     </a>
                                 </li>
