@@ -46,24 +46,25 @@ class EmployeesImagesController
     public function create()
     {
         // Obtener la lista de usuarios activos/inactivos
-        $employees = $this->modelosvc->getEmployeesWithUserInfo();        require_once ('views/components/layout/head.php');
+        $employees = $this->modelosvc->getEmployeesWithUserInfo();        
+        require_once ('views/components/layout/head.php');
         require_once ('views/employees_images/create.php');
         require_once ('views/components/layout/footer.php');
     }
 
     public function createupdate()
 {
-    $employee_id = $_POST['employee_id'];
+    $Employees_id = $_POST['employee_id'];
     $tipo_imagen = mime_content_type($_FILES['imagen']['tmp_name']);
     $imagen = file_get_contents($_FILES['imagen']['tmp_name']);
 
     // Validar que el ID del empleado exista en la tabla `employees`
-    if (!$this->modelosvc->employeeExists($employee_id)) {
+    if (!$this->modelosvc->employeeExists($Employees_id)) {
         echo "Error: El ID de empleado no existe en la tabla employees.";
         return;
     }
 
-    $insertado = $this->modelosvc->insert($employee_id, $imagen, $tipo_imagen);
+    $insertado = $this->modelosvc->insert($Employees_id, $imagen, $tipo_imagen);
 
     if ($insertado) {
         header("location:?c=EmployeesImages&m=index");
@@ -99,19 +100,18 @@ class EmployeesImagesController
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $id = $_POST['id'];
-            $tipo_imagen = mime_content_type($_FILES['imagen']['tmp_name']);
-    
-            // Verificar si se subió una nueva imagen
+            $imagen = null;
+            $tipo_imagen = null;
+
             if ($_FILES['imagen']['size'] > 0) {
                 $imagen = file_get_contents($_FILES['imagen']['tmp_name']);
                 $imagen = base64_encode($imagen);
-            } else {
-                // Si no se subió una nueva imagen, mantener la imagen actual en la base de datos
-                $imagen = null; // O asignar la imagen actual almacenada en la base de datos
+                $tipo_imagen = mime_content_type($_FILES['imagen']['tmp_name']);
             }
+
             $datos = ['id' => $id, 'imagen' => $imagen, 'tipo_imagen' => $tipo_imagen];
             $actualizado = $this->modelosvc->update($datos);
-    
+
             if ($actualizado) {
                 header("location:?c=EmployeesImages&m=index");
             } else {
@@ -119,6 +119,7 @@ class EmployeesImagesController
             }
         }
     }
+
     
 
     public function delete()

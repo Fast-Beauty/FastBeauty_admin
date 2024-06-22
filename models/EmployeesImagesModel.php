@@ -104,13 +104,28 @@ class EmployeesImagesModel
 
     public function update($datos)
     {
-        $sql = "UPDATE employees_images SET imagen='{$datos['imagen']}', tipo_imagen='{$datos['tipo_imagen']}' WHERE id='{$datos['id']}'";
-        if ($this->svc->query($sql)) {
-            // La actualización fue exitosa
+        $sql = "UPDATE employees_images SET ";
+        $params = [];
+        $types = '';
+
+        if (!is_null($datos['imagen'])) {
+            $sql .= "imagen = ?, tipo_imagen = ?, ";
+            $params[] = base64_decode($datos['imagen']); // Decodificar la imagen base64 antes de guardarla
+            $params[] = $datos['tipo_imagen'];
+            $types .= 'ss';
+        }
+
+        $sql = rtrim($sql, ', ') . " WHERE id = ?";
+        $params[] = $datos['id'];
+        $types .= 'i';
+
+        $stmt = $this->svc->prepare($sql);
+        $stmt->bind_param($types, ...$params);
+
+        if ($stmt->execute()) {
             return true;
         } else {
-            // La actualización falló
-            echo "Error al actualizar la cita: " . $this->svc->error;
+            echo "Error al actualizar la imagen: " . $this->svc->error;
             return false;
         }
     }
