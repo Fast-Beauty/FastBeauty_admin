@@ -1,13 +1,13 @@
 <?php
 
-require_once 'models/ServiceModel.php';
+require_once 'models/ServicesModel.php';
 
 class ServicesController{
 
     private $modelosvc;
 
     public function __CONSTRUCT() {
-        $this->modelosvc = new ServiceModel();
+        $this->modelosvc = new ServicesModel();
     }
 
     public function index(){  
@@ -44,7 +44,8 @@ class ServicesController{
         $description = $_POST['description'];
         $price = $_POST['price'];
         $time = $_POST['time'];
-        $data = "'".$name."', '".$description."', ".$price.", ".$time;
+        $branch_office_id = $_POST['branch_office_id'];
+        $data = "'".$name."', '".$description."', '".$price."', '".$time."', ".$branch_office_id;
 
         if(!empty($_POST["btnEditar"])) {
 
@@ -54,6 +55,7 @@ class ServicesController{
                 'description' => $description,
                 'price' => $price,
                 'time' => $time,
+                'branch_office_id' => $branch_office_id,
                 'id' => $id
             );
 

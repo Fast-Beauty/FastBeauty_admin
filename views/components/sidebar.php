@@ -88,6 +88,19 @@
                         </li>
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-bookmark"></i></span>
+                                <span class="pcoded-mtext">Marcas</span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class="">
+                                    <a href="?c=Mark&m=index" class="waves-effect waves-dark">
+                                        <span class="">Listar</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
                                 <span class="pcoded-micon">
                                     <i class="feather icon-grid"></i>
                                 </span>
@@ -100,17 +113,10 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-
-                        <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
-                            <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                <span class="pcoded-micon"><i class="feather icon-image"></i></span>
-                                <span class="pcoded-mtext">Imagenes de Sucursales</span>
-                            </a>
                             <ul class="pcoded-submenu">
                                 <li class="">
                                     <a href="?c=BranchImages&m=index" class="waves-effect waves-dark">
-                                        <span class="">Listar</span>
+                                        <span class="">Imagenes</span>
                                     </a>
                                 </li>
                             </ul>
@@ -128,11 +134,19 @@
                                     </a>
                                 </li>
                             </ul>
+
+                            <ul class="pcoded-submenu">
+                                <li class="" dropdown-icon="style1" subitem-icon="style1">
+                                <a href="?c=ServicesImages&m=index" class="waves-effect waves-dark">
+                                        <span class="">Imagenes</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                <span class="pcoded-micon"><i class="feather icon-briefcase"></i></span>
+                                <span class="pcoded-micon"><i class="feather icon-star"></i></span>
                                 <span class="pcoded-mtext">Puntaje</span>
                             </a>
                             <ul class="pcoded-submenu">
