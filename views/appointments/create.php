@@ -11,12 +11,12 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                        <form action="?c=Appointments&m=createupdate" class="bg-white px-5 py-4 formulario-user"
+                        <form action="?c=Appointments&m=createupdate" id="formularioUserCreate" class="bg-white px-5 py-4 formulario-user"
                             method="post">
                             <h3 class="mb-4 text-center">Nueva Cita</h3>
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="status">Estado:</label>
-                                <select id="status" class="input-form-user py-3 px-2" name="status">
+                                <select id="status" class="input-form-user py-3 px-2" name="status id">
                                     <option selected>Open this select menu</option>
                                     <option value="ESPERA">Espera</option>
                                     <option value="CONFIRMADO">Confirmado</option>
