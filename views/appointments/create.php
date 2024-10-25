@@ -1,5 +1,5 @@
 <!-- Contenido -->
-<div class="pcoded-content">
+<div class="pcoded-content position-relative">
     <div class="page-header card">
         <div class="back-user">
             <a href="?c=Appointments&m=index">
@@ -11,7 +11,7 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                        <form action="?c=Appointments&m=createupdate" id="formularioUserCreate" class="bg-white px-5 py-4 formulario-user"
+                        <form action="?c=Appointments&m=createupdate" id="formularioAppointments" class="bg-white px-5 py-4 formulario-user position-relative"
                             method="post">
                             <h3 class="mb-4 text-center">Nueva Cita</h3>
                             <div class="d-flex flex-column mt-2 campo">
@@ -74,3 +74,4 @@
         </div>
     </div>
 </div>
+<script src="assets/js/UserValidation.js"></script>
