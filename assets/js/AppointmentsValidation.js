@@ -1,18 +1,17 @@
 // Constantes inputs
-document.getElementById("formularioUsers").addEventListener("submit", async function(e) {
+document.getElementById("formularioAppointments").addEventListener("submit", async function(e) {
     e.preventDefault();
-    const users={
-        name: document.getElementById("name").value,
-        lastname: document.getElementById("lastname").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        type_document: document.getElementById("type_document").value,
-        document: document.getElementById("document").value,
-        status: document.getElementById("status").value
+    const appointment={
+        status: document.getElementById("status").value,
+        date: document.getElementById("date").value,
+        hora: document.getElementById("hora").value,
+        clients_id: document.getElementById("clients_id").value,
+        Employees_id: document.getElementById("Employees_id").value,
+        services_id: document.getElementById("services_id").value
     };
 //pruebas de commit
     //instancia de uservalidation para validar formulario
-    const validacion = new UsersValidation(users);
+    const validacion = new AppointmentValidation(appointment);
     const resultadoValidacion = validacion.validarFormulario();
 
     if (!resultadoValidacion.valido){
@@ -29,9 +28,9 @@ document.getElementById("formularioUsers").addEventListener("submit", async func
     
 })
 
-class UsersValidation{
-    constructor(users){
-        this.users = users;
+class AppointmentValidation{
+    constructor(appointment){
+        this.appointment = appointment;
     }
     validarFormulario() {
         if (!this.camposCompletos()) {
@@ -42,7 +41,7 @@ class UsersValidation{
     //Campos completos
 
     camposCompletos(){
-        return Object.values(this.users).every(value => value !== '');
+        return Object.values(this.appointment).every(value => value !== '');
     }
     // Método para validar empleado, cliente y servicio
     /*seleccionValida(){
@@ -64,7 +63,7 @@ function imprimirAlerta(mensaje, valido) {
             divMensaje.textContent = mensaje;
         }
         
-        document.getElementById("formularioUsers").appendChild(divMensaje);
+        document.getElementById("formularioAppointments").appendChild(divMensaje);
     
         setTimeout(() => {
             divMensaje.remove()

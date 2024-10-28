@@ -9,7 +9,7 @@
             <div class="">
                 <div class="page-header-title">
                     <div class="d-inline">
-                        <form action="?c=Appointments&m=update" class="bg-white px-5 py-4 formulario-user"
+                        <form action="?c=Appointments&m=update" id="formularioAppointments" class="bg-white px-5 py-4 formulario-user"
                             method="post">
                             <h3 class="mb-4 text-center">Editar Cita</h3>
                             <input type="hidden" value="<?= $appointment['id'] ?>" name="id">
@@ -74,3 +74,5 @@
         </div>
     </div>
 </div>
+
+<script src="assets/js/AppointmentsValidation.js"></script>

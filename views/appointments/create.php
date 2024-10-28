@@ -74,4 +74,4 @@
         </div>
     </div>
 </div>
-<script src="assets/js/UserValidation.js"></script>
+<script src="assets/js/AppointmentsValidation.js"></script>

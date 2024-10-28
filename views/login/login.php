@@ -91,7 +91,7 @@
             </div>
             <div class="formulario-register mt-4">
                 <h1 class="text-center mb-1">Crear Cuenta</h1>
-                <form action="" id="formulario-register" class="formulario">
+                <form action="" id="formulario-register" id="formularioAppointments" class="formulario">
                     <div class="campos">
                         <div class="campo">
                             <label for="name">Nombre</label>

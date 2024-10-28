@@ -12,7 +12,7 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                    <form action="?c=Users&m=createupdate" class="bg-white px-5 py-4 formulario-user" method="post">
+                    <form action="?c=Users&m=createupdate" id="formularioUsers" class="bg-white px-5 py-4 formulario-user" method="post">
                         <h3 class="mb-4 text-center">Editar Usuario</h3>
                         <input type="hidden" value="<?=$_GET["id"]?>" name="id">
                         <?php foreach($this->modelosvc->obtenerId($_GET['id']) as $datos): ?>
@@ -71,3 +71,4 @@
 </div>
 </div>
 </div>
+<script src="assets/js/UserValidation.js"></script>
