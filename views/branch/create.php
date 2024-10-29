@@ -12,7 +12,7 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                        <form action="?c=Branch&m=createupdate" class="bg-white px-5 py-4 formulario-user" method="post">
+                        <form action="?c=Branch&m=createupdate" id="formularioBranch" class="bg-white px-5 py-4 formulario-user" method="post">
                         <h3 class="mb-4 text-center">Nueva Sucursal</h3>
                         <div class="d-flex flex-column mt-2 campo">
                             <label for="nombre">Nombre:</label>
@@ -52,3 +52,4 @@
 </div>
 </div>
 </div>
+<script src="assets/js/BranchValidation.js"></script>

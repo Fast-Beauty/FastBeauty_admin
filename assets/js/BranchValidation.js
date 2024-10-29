@@ -1,16 +1,15 @@
 // Constantes inputs
-document.getElementById("formularioClientes").addEventListener("submit", function(e) {
-    const cliente={
-        user_id: document.getElementById("user_id").value,
-        client_datebirth: document.getElementById("client_datebirth").value,
-        client_gender: document.getElementById("client_gender").value
-       /* gender: document.getElementById("gender").value,
-        date_birth: document.getElementById("date_birth").value,
-        status: document.getElementById("status").value*/
+document.getElementById("formularioBranch").addEventListener("submit", async function(e) {
+    const branch={
+        nombre: document.getElementById("nombre").value,
+        nit: document.getElementById("nit").value,
+        addres: document.getElementById("addres").value,
+        google_location: document.getElementById("google_location").value,
+        phone: document.getElementById("phone").value
     };
 //pruebas de commit
     //instancia de uservalidation para validar formulario
-    const validacion = new ClientValidation(cliente);
+    const validacion = new BranchValidation(branch);
     const resultadoValidacion = validacion.validarFormulario();
 
     if (!resultadoValidacion.valido){
@@ -20,17 +19,17 @@ document.getElementById("formularioClientes").addEventListener("submit", functio
     }
 
     try {
-        imprimirAlerta('Cliente registrado con exito' , 'succes');
+        imprimirAlerta('Imagen registrada con exito' , 'succes');
     } catch (error){
         console.log(error);
-        imprimirAlerta('Ocurrio un error al registrar Cliente', 'error')
+        imprimirAlerta('Ocurrio un error al registrar cita', 'error')
     }
     
 })
 
-class ClientValidation{
-    constructor(cliente){
-        this.cliente = cliente;
+class BranchValidation{
+    constructor(branch){
+        this.branch = branch;
     }
     validarFormulario() {
         if (!this.camposCompletos()) {
@@ -41,8 +40,12 @@ class ClientValidation{
     //Campos completos
 
     camposCompletos(){
-        return Object.values(this.cliente).every(value => value !== '');
+        return Object.values(this.branch).every(value => value !== '');
     }
+    // Método para validar empleado, cliente y servicio
+    /*seleccionValida(){
+        return this.appointment.clients_id ! == '' && this.appointment.Employess_id !== '' && this.appointment.services_id !== '';
+    }*/
 }
 function imprimirAlerta(mensaje, valido) {
     const alerta = document.querySelector('.alerta');
@@ -59,7 +62,7 @@ function imprimirAlerta(mensaje, valido) {
             divMensaje.textContent = mensaje;
         }
         
-        document.getElementById("formularioClientes").appendChild(divMensaje);
+        document.getElementById("formularioBranch").appendChild(divMensaje);
     
         setTimeout(() => {
             divMensaje.remove()

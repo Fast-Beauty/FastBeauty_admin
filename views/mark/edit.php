@@ -12,7 +12,7 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                    <form action="?c=Mark&m=createupdate" class="bg-white px-5 py-4 formulario-user" method="post">
+                    <form action="?c=Mark&m=createupdate" id="formularioMarca" class="bg-white px-5 py-4 formulario-user" method="post">
                         <h3 class="mb-4 text-center">Editar Marca</h3>
                         <input type="hidden" value="<?=$_GET["id"]?>" name="id">
                         <?php foreach($this->modelosvc->obtenerId($_GET['id']) as $datos): ?>
@@ -36,3 +36,4 @@
 </div>
 </div>
 </div>
+<script src="assets/js/MarkValidation.js"></script>

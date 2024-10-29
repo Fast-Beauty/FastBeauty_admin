@@ -12,7 +12,7 @@
                 <div class="page-header-title">
                     <div class="d-inline">
                         <!-- Aquí se cambia el contenido -->
-                    <form action="?c=ProductsImages&m=createupdate" class="bg-white px-5 py-4 formulario-user" method="post" enctype="multipart/form-data">
+                    <form action="?c=ProductsImages&m=createupdate" id="formularioProductoImg" class="bg-white px-5 py-4 formulario-user" method="post" enctype="multipart/form-data">
                         <h3 class="mb-4 text-center">Nueva imagen de producto</h3>
                         <div class="d-flex flex-column mt-2 campo">
                             <label for="imagen">Imagen:</label>
@@ -42,3 +42,4 @@
 </div>
 </div>
 </div>
+<script src="assets/js/ProductsImgValidation.js"></script>
