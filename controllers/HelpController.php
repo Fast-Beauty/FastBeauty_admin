@@ -1,7 +1,7 @@
 <?php
 require_once 'models/ScoreModel.php';
 
-class ScoreController
+class HelpController
 {
     private $modelosvc;
     public function __construct()
@@ -12,11 +12,11 @@ class ScoreController
     public function index()
     {
         require_once ('views/components/layout/head.php');
-        require_once ('views/score/index.php');
+        require_once ('views/help/index.php');
         require_once ('views/components/layout/footer.php');
     }
 
-    public function show()
+  /*  public function show()
     {
         if (isset($_GET['id']) && !empty($_GET['id'])) {
             $id = $_GET['id']; // Obtener el ID de la cita de la URL
@@ -28,7 +28,7 @@ class ScoreController
                 $clients_id = $this->modelosvc->getClients_id();
 
                 require_once ('views/components/layout/head.php');
-                require_once ('views/score/show.php');
+                require_once ('views/sco/show.php');
                 require_once ('views/components/layout/footer.php');
             } else {
                 // Manejar el caso de no encontrar la cita con el ID proporcionado
@@ -41,7 +41,7 @@ class ScoreController
             echo "ID del puntaje inválido";
         }
     }
-
+*/ /*
     public function edit()
     {
         if (isset($_GET['id']) && !empty($_GET['id'])) {
@@ -67,8 +67,8 @@ class ScoreController
             echo "ID del puntaje inválido";
         }
     }
-
-
+*/
+/*
     public function create()
     {
         $modelo = new ScoreModel();
@@ -85,8 +85,8 @@ class ScoreController
         require_once ('views/score/create.php');
         require_once ('views/components/layout/footer.php');
     }
-
-    public function createupdate()
+*/
+  /*  public function createupdate()
     {
         // Recoger los datos del formulario
         $punctuation = $_POST['punctuation'];
@@ -106,7 +106,8 @@ class ScoreController
             // Por ejemplo, mostrar un mensaje de error
             echo "Error al insertar el puntaje";
         }
-    }
+    } */
+   /*
     public function update()
     {
         // Verificar si se recibió un ID válido para la cita a editar
@@ -145,7 +146,8 @@ class ScoreController
             echo "ID de puntaje inválido";
         }
     }
-
+        */
+/*
     public function delete()
     {
         $this->modelosvc->delete($_GET['id']);
@@ -155,5 +157,5 @@ class ScoreController
 
 
 
-
+*/
 }
