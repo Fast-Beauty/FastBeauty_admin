@@ -15,12 +15,11 @@
                             <input type="hidden" value="<?= $appointment['id'] ?>" name="id">
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="status">Estado:</label>
-                                <select id="status" class="input-form-user py-3 px-2" name="status">
-                                    <?php foreach ($status as $row): ?>
-                                        <option value="<?= $row['status'] ?>" <?= $row['status'] == $appointment['status'] ? 'selected' : '' ?>>
-                                            <?= $row['status'] ?>
-                                        </option>
-                                    <?php endforeach; ?>
+                                <select id="status" name="status" class="input-form-user py-3 px-2">
+                                    <option value="" disabled <?= empty($users['status']) ? 'selected' : '' ?>>Open this select menu</option>
+                                    <option value="ESPERA" <?= isset($users['status']) && $users['status'] == 'ESPERA' ? 'selected' : '' ?>>Espera</option>
+                                    <option value="CONFIRMADO" <?= isset($users['status']) && $users['status'] == 'CONFIRMADO' ? 'selected' : '' ?>>Confirmado</option>
+                                    <option value="RECHAZADO" <?= isset($users['status']) && $users['status'] == 'RECHAZADO' ? 'selected' : '' ?>>Rechazado</option>
                                 </select>
                             </div>
                             <!-- Otras entradas del formulario para otros campos de la cita -->
@@ -40,7 +39,7 @@
                                 <select id="clients_id" class="input-form-user py-3 px-2" name="clients_id">
                                     <?php foreach ($clients as $client): ?>
                                         <option value="<?= $client['clients_id'] ?>" <?= $client['clients_id'] == $appointment['clients_id'] ? 'selected' : '' ?>>
-                                            <?= $client['name']. ' ' . $client['lastname']?>
+                                            <?= $client['name'] . ' ' . $client['lastname'] ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
@@ -50,7 +49,7 @@
                                 <select id="Employees_id" class="input-form-user py-3 px-2" name="Employees_id">
                                     <?php foreach ($employees as $employee): ?>
                                         <option value="<?= $employee['employee_id'] ?>" <?= $employee['employee_id'] == $appointment['Employees_id'] ? 'selected' : '' ?>>
-                                            <?= $employee['name']. ' ' . $employee['lastname'] ?>
+                                            <?= $employee['name'] . ' ' . $employee['lastname'] ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>

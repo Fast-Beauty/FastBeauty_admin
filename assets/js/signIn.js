@@ -16,11 +16,11 @@ async function logUsuario(e) {
     e.preventDefault();
 
     const user = {
-        email: email.value, 
+        email: email.value,
         password: password.value
     }
 
-    if(!Object.values(user).every(user => user != '')) {
+    if (!Object.values(user).every(user => user != '')) {
         imprimirAlerta('Debe rellenar todos los campos', 'error');
         return
     }
@@ -46,11 +46,11 @@ async function logUsuario(e) {
             case 'auth/invalid-credential':
                 imprimirAlerta('El email o contraseña no son válidos', 'error');
                 break;
-            
+
             case 'auth/too-many-requests':
                 imprimirAlerta('Su cuenta ha sido desabilitada por cuestiones de seguridad intentelo más tarde o cambie su contraseña', 'error');
                 break;
-            
+
             default:
                 break;
         }
@@ -62,13 +62,13 @@ function imprimirAlerta(mensaje, tipo) {
 
     const alerta = document.querySelector('.alert-danger');
 
-    if(!alerta) {
+    if (!alerta) {
         const divMensaje = document.createElement('div');
         divMensaje.classList.add('alert');
         tipo == 'error' ? divMensaje.classList.add('alert-danger') : divMensaje.classList.add('alert-success')
         divMensaje.textContent = mensaje;
         formulario.appendChild(divMensaje);
-    
+
         setTimeout(() => {
             divMensaje.remove()
         }, 2000);

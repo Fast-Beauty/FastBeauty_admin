@@ -42,12 +42,10 @@
 
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="status">Estado:</label>
-                                <select id="status" class="input-form-user py-3 px-2" name="status" disabled>
-                                    <?php foreach ($users as $user): ?>
-                                        <option value="<?= $employeesDetails['status'] ?>" <?= $user['id'] == $client['users_id'] ? 'selected' : '' ?>>
-                                            <?= $user['status'] ?>
-                                        </option>
-                                    <?php endforeach; ?>
+                                <select id="status" class="input-form-user py-3 px-2" name="status">
+                                <?php foreach($this->modelosvc->obtenerSucursales() as $datos): ?>
+                                    <option value="<?=$datos['id']?>"><?=$datos['name']?></option>
+                                <?php endforeach; ?>
                                 </select>
                             </div>
 

@@ -2,26 +2,31 @@
 
 require_once 'models/LoginModel.php';
 
-class LoginController {
+class LoginController
+{
 
     private $modelosvc;
 
-    public function __CONSTRUCT() {
+    public function __CONSTRUCT()
+    {
         $this->modelosvc = new LoginModel();
     }
 
-    public function login() {
+    public function login()
+    {
         require_once('views/login/login.php');
     }
 
-    public function create() {
+    public function create()
+    {
         $data = json_decode(file_get_contents('php://input'), true);
         $result = $this->modelosvc->insert($data);
-    
+
         if ($result) {
             echo json_encode(['success' => true]);
         } else {
             echo json_encode(['success' => false]);
-        }    
+        }
     }
+    /* Aquí deberia haber un action que valide la autienticación del usuario y guarde en una variable de sesion el rol del usuario*/
 }

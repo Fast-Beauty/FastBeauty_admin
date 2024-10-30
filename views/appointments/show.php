@@ -11,7 +11,7 @@
                     <div class="d-inline">
                         <form action="?c=Appointments&m=update" class="bg-white px-5 py-4 formulario-user"
                             method="post">
-                            <h3 class="mb-4 text-center">Editar Cita</h3>
+                            <h3 class="mb-4 text-center">Detalles de Cita</h3>
                             <div class="d-flex flex-column mt-2 campo">
                                 <label for="status">Estado:</label>
                                 <select id="status" class="input-form-user py-3 px-2" name="status" disabled>

@@ -41,11 +41,16 @@
 
 <body>
     <div id="wrapper">
-        <?php   
-            require_once('./views/components/navbar.php');
+        <?php
+        require_once('./views/components/navbar.php');
         ?>
-        
-        <?php  
-            require_once('./views/components/sidebar.php'); 
+
+        <?php
+        require_once('./views/components/sidebar.php');
+        //if ($_SESSION['rol'] === "Admin") {
+        //  require_once('./views/components/sidebar.php');
+        //} else {
+        //  require_once('./views/components/sidebarNoAdmin.php');
+        //}
+
         ?>
-        
