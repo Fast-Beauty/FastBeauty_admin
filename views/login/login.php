@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
     <main class="main-login-register">
         <div class="login d-lg-flex ">
@@ -105,7 +107,7 @@
                             <label for="phone">Telefono</label>
                             <input type="number" id="phone" placeholder="Ingrese su numero de telefono">
                         </div>
-    
+
                         <div class="campo">
                             <label for="phone">Tipo de documento</label>
                             <select name="type_document" id="type_document">
@@ -130,6 +132,10 @@
                         <div class="campo">
                             <label for="password-r2">Confirmar contraseña</label>
                             <input type="password" id="password-r2" placeholder="Ingrese su contraseña de nuevo">
+                        </div>
+                        <div class="campo">
+                            <label for="rol">Rol</label>
+                            <input type="rol" id="3" value="Empleado" placeholder="Empleado" disabled>
                         </div>
                     </div>
 
@@ -158,6 +164,7 @@
     <script src="assets/js/signIn.js" type="module"></script>
     <script src="assets/js/signUp.js" type="module"></script>
     <script src="assets/js/app.js"></script>
-    
+
 </body>
+
 </html>

@@ -12,6 +12,7 @@ const documento = formulario.querySelector('#document');
 const email = formulario.querySelector('#correo-r');
 const password = formulario.querySelector('#password-r');
 const confirmPasword = formulario.querySelector('#password-r2');
+//const rol = formulario.querySelector('#rol');
 
 
 // Eventos
@@ -32,7 +33,8 @@ async function registrarUsuario(e) {
         email: email.value,
         password: password.value,
         status: "ACTIVE",
-        confirmPasword: confirmPasword.value
+        confirmPasword: confirmPasword.value,
+        //rol: "Employees"
     }
 
     if (!Object.values(user).every(users => users != '')) {
@@ -64,12 +66,12 @@ async function registrarUsuario(e) {
             case 'auth/weak-password':
                 imprimirAlerta('Contraseña mín. 6 caracteres', 'error');
                 break;
-            
-            
+
+
             default:
                 break;
         }
-    }   
+    }
 }
 
 async function sendDataApi(usuario) {
@@ -85,13 +87,14 @@ async function sendDataApi(usuario) {
 
     usuarios ? id = Object.values(usuarios).length : id = 0;
 
-    const {nombre, telefono, documento, email} = usuario;
+    const { nombre, telefono, documento, email } = usuario;
     const user = {
         nombre,
         telefono,
         documento,
         email,
         estado: 'Activo',
+        //rol: 'Employees',
         id
     }
     try {
@@ -102,11 +105,11 @@ async function sendDataApi(usuario) {
                 'Content-Type': 'application/json'
             }
         });
-    
+
         setTimeout(() => {
             location.reload();
         }, 2800);
-    
+
     } catch (error) {
         console.log(error)
     }
@@ -139,17 +142,17 @@ async function sendDataDB(usuario) {
 function imprimirAlerta(mensaje, tipo) {
     const alerta = document.querySelector('.alerta');
 
-    if(!alerta) {
+    if (!alerta) {
         const divMensaje = document.createElement('div');
         divMensaje.classList.add('mb-0', 'text-center', 'alerta')
-        if(tipo) {
+        if (tipo) {
             divMensaje.classList.add('alert', 'alert-danger', 'text-danger');
-        }else {
+        } else {
             divMensaje.classList.add('alert', 'alert-success')
         }
         divMensaje.textContent = mensaje;
         formulario.appendChild(divMensaje);
-    
+
         setTimeout(() => {
             divMensaje.remove()
         }, 3000);
