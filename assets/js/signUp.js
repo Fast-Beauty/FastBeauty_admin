@@ -34,7 +34,7 @@ async function registrarUsuario(e) {
         password: password.value,
         status: "ACTIVE",
         confirmPasword: confirmPasword.value,
-        //rol: "Employees"
+        rol_rol_id: 2
     }
 
     if (!Object.values(user).every(users => users != '')) {
