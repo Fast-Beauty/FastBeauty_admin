@@ -1,0 +1,49 @@
+.pcoded-content {
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 20px;    
+}
+
+/* Titulo */
+.page-header-title h5, .page-header-title span {
+    color: white;
+    text-shadow: 8px 8px 16px rgba(0, 0, 0, 1), -8px -8px 16px rgba(0, 0, 0, 1);
+}
+
+/* Migas de pan */
+.breadcrumb-item a {
+    color: white;
+    text-shadow: 8px 8px 16px rgba(0, 0, 0, 1), -8px -8px 16px rgba(0, 0, 0, 1);
+}
+
+
+/* SIDEBAR */
+
+/* Aplica un gradiente al fondo del sidebar */
+.pcoded-navbar {
+    background: linear-gradient(to bottom, #000000, #1E3A8A, #93C5FD); /* de negro a azul y azul claro */
+}
+
+/* Personaliza los enlaces para asegurarse de que el contraste sea visible */
+.pcoded-navbar .pcoded-item a {
+    color: #ffffff; /* Texto blanco para que sea legible sobre el fondo oscuro */
+    transition: background-color 0.3s ease; /* Agrega una transición para el cambio de color al pasar el mouse */
+}
+
+/* Efecto hover en los enlaces */
+.pcoded-navbar .pcoded-item a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Agrega un fondo sutil cuando el mouse pasa sobre el enlace */
+}
+
+/* Personaliza los iconos */
+.pcoded-navbar .pcoded-item .pcoded-micon {
+    color: #ffffff; /* Los iconos serán de color blanco para un buen contraste */
+}
+
+/* Efecto hover en los iconos */
+.pcoded-navbar .pcoded-item a:hover .pcoded-micon {
+    color: #93C5FD; /* Cambia el color del icono al azul claro cuando se pasa el mouse */
+}
