@@ -4,7 +4,7 @@
         <nav class="pcoded-navbar">
             <div class="nav-list">
                 <div class="pcoded-inner-navbar main-menu">
-                    <div class="pcoded-navigation-label">Navigation</div>
+                    <div class="pcoded-navigation-label">Menú</div>
                     <ul class="pcoded-item pcoded-left-item" item-border="true" item-border-style="solid"
                         subitem-border="false">
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
@@ -143,7 +143,10 @@
                                 </li>
                             </ul>
                         </li>
-
+                        <!-- <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
+                            <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                <span class="pcoded-micon"><i class="feather icon-star"></i></span>
+                                <span class="pcoded-mtext">Puntaje</span>
                         <li class="pcoded-hasmenu" dropdown-icon="style1" subitem-icon="style1">
                             <a href="?c=Help&m=index " class="waves-effect waves-dark">
                                 <span class="pcoded-micon"><i class="feather icon-help-circle"></i></span>
@@ -155,6 +158,8 @@
                                         <span class="">Ayuda</span>
                                     </a>
                                 </li>
+                            </ul>
+                        </li> -->
                             </ul> -->
                         </li>
                     </ul>
